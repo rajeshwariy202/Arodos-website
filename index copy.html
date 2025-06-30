@@ -11,7 +11,6 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./skeleton.css">
     <style src="./output.css"></style>
     <style>
     
@@ -149,456 +148,124 @@
     
 
   /* slow internet css */
-
- 
-  #real-content {
-    display: none;
-  }
-
-  body.loading {
-    overflow: hidden;
-  }
-
-  
-
-  /* Skeleton styles moved to skeleton.css */
-  
-  body.loading {
-    overflow: hidden;
-  }
-</style>
+      .skeleton-header-component {
+            /* Mimic your actual header's overall styling and dimensions */
+            padding-top: 2rem; /* py-8 */
+            padding-bottom: 2rem; /* py-8 */
+            margin-top: 1rem; /* mt-4 */
+            max-width: 80rem; /* max-w-8xl (1280px in Tailwind's default) */
+            margin-left: 1rem; /* ml-4 */
+            margin-right: 1rem; /* mr-4 */
+            width: calc(100% - 2rem); /* 100% minus total horizontal margin */
+            border-top-left-radius: 24px; /* rounded-t-[24px] */
+            border-top-right-radius: 24px; /* rounded-t-[24px] */
+            background-color: black; /* bg-black */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
 
 
+            display: flex; /* flex */
+            align-items: center; /* items-center */
+            justify-content: space-between; /* justify-between */
+            padding-left: 1.5rem; /* px-6 */
+            padding-right: 1.5rem; /* px-6 */
+            height: 100px; /* Approximate height of actual header */
+            box-sizing: border-box; /* Include padding in height */
+        }
+
+        .skeleton-header-component .skeleton-logo-placeholder {
+            width: 180px; /* Adjust based on your logo's rendered width */
+            height: 60px; /* Adjust based on your logo's rendered height */
+            background-color: #555; /* Darker gray for logo placeholder */
+            border-radius: 8px; /* Slightly rounded */
+        }
+
+        .skeleton-header-component .skeleton-nav-placeholder {
+            display: flex;
+            gap: 2rem; /* space-x-8 */
+        }
+
+        .skeleton-header-component .skeleton-nav-item-placeholder {
+            width: 70px; /* Approximate width for a nav link text */
+            height: 20px; /* Approximate height for a nav link text */
+            background-color: #555; /* Darker gray for nav item placeholder */
+        }
+
+        .skeleton-header-component .skeleton-mobile-menu-btn-placeholder {
+            width: 32px; /* w-8 */
+            height: 32px; /* h-8 */
+            background-color: #555;
+            border-radius: 4px;
+            display: none; /* Hidden by default for md:block equivalent */
+        }
+
+        /* Show mobile menu button placeholder on small screens */
+        @media (max-width: 767px) { /* md:hidden breakpoint */
+            .skeleton-header-component .skeleton-nav-placeholder {
+                display: none; /* Hide desktop nav placeholder */
+            }
+            .skeleton-header-component .skeleton-mobile-menu-btn-placeholder {
+                display: block; /* Show mobile menu button placeholder */
+            }
+        }
+
+        /* General flex-grow for the content area in the skeleton loader */
+        #full-page-skeleton-overlay .flex-grow {
+            width: calc(100% - 2rem); /* Match the width of the header skeleton */
+            max-width: 80rem; /* Match the max-width of the header skeleton */
+            margin-left: 1rem;
+            margin-right: 1rem;
+            background-color: #f0f0f0; /* Light background for the content area */
+            border-bottom-left-radius: 24px; /* rounded-b-[24px] */
+            border-bottom-right-radius: 24px; /* rounded-b-[24px] */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+        }
+
+        /* ================================================================= */
+        /* ACTUAL CONTENT STYLES */
+        /* ================================================================= */
+        /* This will initially hide your *entire* website content */
+        #actual-page-content {
+            display: none; /* Initially hidden by CSS */
+            opacity: 0; /* For fade-in effect */
+            transition: opacity 0.5s ease-in; /* Smooth fade-in */
+        }
+        /* Your existing project's CSS for the actual content goes here */
+        /* For example, if you have a main.css file, link it here */
+        /* <link rel="stylesheet" href="main.css"> */
 
     </style>
   </head>
   <body class="bg-[#F3F3F3]">
 
-    <!-- Skeleton Loader Template -->
-<template id="skeleton-template">
-  <div id="full-page-skeleton-overlay" class="text-white">
-    <!-- Header skeleton with black background -->
-    <header class="py-8 mt-4 mx-4 rounded-t-[24px] bg-black shadow-lg">
-      <div class="container mt-5 mx-auto flex items-center justify-between px-6 md:px-8 lg:px-16">
-        <!-- Logo placeholder -->
-        <div class="flex items-center">
-          <div class="skeleton skeleton-rect h-[40px] w-[180px] sm:w-[280px] md:w-[320px] lg:w-[350px]"></div>
+    <!-- slow internet loader -->
+  <div id="full-page-skeleton-overlay">
+        <header class="skeleton-header-component skeleton-shape">
+            <div class="skeleton-logo-placeholder skeleton-shape"></div>
+            <nav class="skeleton-nav-placeholder">
+                <div class="skeleton-nav-item-placeholder skeleton-shape"></div>
+                <div class="skeleton-nav-item-placeholder skeleton-shape"></div>
+                <div class="skeleton-nav-item-placeholder skeleton-shape"></div>
+                <div class="skeleton-nav-item-placeholder skeleton-shape"></div>
+                <div class="skeleton-nav-item-placeholder skeleton-shape"></div>
+            </nav>
+            <div class="skeleton-mobile-menu-btn-placeholder skeleton-shape"></div>
+        </header>
+
+        <div class="flex-grow flex flex-col items-center justify-center p-8">
+            <div class="w-3/4 h-24 bg-gray-300 rounded-lg mb-8 skeleton-shape"></div>
+            <div class="w-1/2 h-12 bg-gray-300 rounded-lg mb-4 skeleton-shape"></div>
+            <div class="w-2/3 h-8 bg-gray-300 rounded-lg skeleton-shape"></div>
+            <div class="w-1/3 h-6 bg-gray-300 rounded-lg skeleton-shape"></div>
+            <div class="w-full max-w-xl h-48 bg-gray-300 rounded-lg mt-8 skeleton-shape"></div>
         </div>
-        
-        <!-- Nav items - desktop -->
-        <nav class="hidden md:block">
-          <div class="flex space-x-8">
-            <div class="skeleton skeleton-line w-16 h-4"></div>
-            <div class="skeleton skeleton-line w-16 h-4"></div>
-            <div class="skeleton skeleton-line w-16 h-4"></div>
-            <div class="skeleton skeleton-line w-16 h-4"></div>
-            <div class="skeleton skeleton-line w-16 h-4"></div>
-          </div>
-        </nav>
-        
-        <!-- Mobile menu icon -->
-        <div class="md:hidden">
-          <div class="skeleton skeleton-rect w-8 h-8"></div>
-        </div>
-      </div>
-      
-      <!-- Mobile menu (hidden) -->
-      <nav class="md:hidden hidden bg-gray-800 py-4 px-6">
-        <!-- This is hidden by default but included for structure -->
-      </nav>
-    </header>
+    </div>
 
-    <!-- Main content area -->
-    <main class="relative ml-4 mr-4 flex flex-col justify-center items-center max-w-8xl mx-auto overflow-hidden min-h-[calc(100vh+200px)] lg:min-h-[calc(100vh+100px)] py-10 bg-gray-800" style="border-bottom-left-radius: 40px; border-bottom-right-radius: 40px">
-      <!-- Hero section skeleton -->
-      <div class="text-center relative z-10 flex-grow flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-16 w-full">
-        <div class="max-w-4xl mx-auto w-full">
-          <!-- Trust badge -->
-          <div class="flex items-center justify-center mt-4 mb-6 space-x-3">
-            <div class="skeleton skeleton-circle w-[30px] h-[30px]"></div>
-          </div>
-          
-          <!-- Headline - responsive sizes -->
-          <div class="mb-4">
-            <div class="skeleton skeleton-line w-4/5 h-8 sm:h-12 md:h-14 lg:h-16 xl:h-18 mx-auto"></div>
-            <div class="skeleton skeleton-line w-3/5 h-8 sm:h-12 md:h-14 lg:h-16 xl:h-18 mx-auto mt-2"></div>
-          </div>
-          
-          <!-- Paragraph - responsive sizes -->
-          <div class="space-y-2 mb-8 mt-5">
-            <div class="skeleton skeleton-line w-full max-w-[300px] sm:max-w-[500px] md:max-w-3xl h-4 mx-auto"></div>
-            <div class="skeleton skeleton-line w-5/6 max-w-[300px] sm:max-w-[500px] md:max-w-3xl h-4 mx-auto"></div>
-            <div class="skeleton skeleton-line w-4/5 max-w-[300px] sm:max-w-[500px] md:max-w-3xl h-4 mx-auto"></div>
-          </div>
-          
-          <!-- CTA Button - responsive sizes -->
-          <div class="flex justify-center">
-            <div class="skeleton skeleton-rect w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] h-10 sm:h-12 md:h-14 rounded-[12px] mt-6"></div>
-          </div>
-          
-          <!-- Stats - responsive layout -->
-          <div class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16 lg:gap-20 mt-20 sm:mt-32 md:mt-40">
-            <div class="text-center w-full md:w-auto">
-              <div class="skeleton skeleton-line w-36 h-4 mx-auto mb-2"></div>
-              <div class="skeleton skeleton-line w-16 h-8 sm:h-10 md:h-12 lg:h-14 mx-auto"></div>
-            </div>
-            <div class="text-center w-full md:w-auto">
-              <div class="skeleton skeleton-line w-36 h-4 mx-auto mb-2"></div>
-              <div class="skeleton skeleton-line w-16 h-8 sm:h-10 md:h-12 lg:h-14 mx-auto"></div>
-            </div>
-            <div class="text-center w-full md:w-auto">
-              <div class="skeleton skeleton-line w-36 h-4 mx-auto mb-2"></div>
-              <div class="skeleton skeleton-line w-16 h-8 sm:h-10 md:h-12 lg:h-14 mx-auto"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    
-    <!-- Vision and Mission section -->
-    <section class="w-full py-2 mt-12">
-      <div class="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-16 rounded-[12px]">
-        <section class="py-12 mt-16 max-w-7xl mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-2 justify-center">
-            
-            <!-- Our Vision Card -->
-            <div class="w-full max-w-[600px]">
-              <div class="relative shadow-lg overflow-hidden rounded-[12px] flex flex-col justify-start text-gray-50 min-h-[600px] md:min-h-[800px]">
-                <div class="skeleton skeleton-rect absolute inset-0 w-full h-full"></div>
-                <div class="absolute inset-x-0 w-full bg-white/5 backdrop-blur-md flex items-center pt-16 pb-8 px-6 text-gray-100 space-x-4">
-                  <span class="absolute left-8 top-24 -translate-y-1/2 size-3 bg-[#F40202] rounded-full"></span>
-                  <div class="flex-grow pl-4">
-                    <div class="skeleton skeleton-line w-3/4 h-10 mb-4"></div>
-                    <div class="space-y-2">
-                      <div class="skeleton skeleton-line w-full h-4"></div>
-                      <div class="skeleton skeleton-line w-11/12 h-4"></div>
-                      <div class="skeleton skeleton-line w-10/12 h-4"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+ 
 
-            <!-- Our Mission Card -->
-            <div class="w-full max-w-[600px]">
-              <div class="relative shadow-lg overflow-hidden rounded-[12px] flex flex-col justify-end text-gray-50 min-h-[600px] md:min-h-[800px]">
-                <div class="skeleton skeleton-rect absolute inset-0 w-full h-full"></div>
-                <div class="absolute inset-x-0 bottom-0 w-full bg-white/10 backdrop-blur-md flex items-center pt-8 pb-16 px-6 text-gray-100 space-x-4">
-                  <span class="absolute left-8 top-14 -translate-y-1/2 size-3 bg-[#F40202] rounded-full"></span>
-                  <div class="flex-grow pl-4">
-                    <div class="skeleton skeleton-line w-3/4 h-10 mb-4"></div>
-                    <div class="space-y-2">
-                      <div class="skeleton skeleton-line w-full h-4"></div>
-                      <div class="skeleton skeleton-line w-11/12 h-4"></div>
-                      <div class="skeleton skeleton-line w-10/12 h-4"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-          </div>
-        </section>
-      </div>
-    </section>
-    
-    <!-- Agile Approach section -->
-    <section class="py-10 sm:py-16 lg:py-24 w-full mt-24 sm:mt-32 lg:mt-48 max-w-[98%] mx-auto">
-      <!-- Heading -->
-      <div class="text-center px-4 sm:px-6 lg:px-8">
-        <div class="skeleton skeleton-line w-2/3 h-10 mx-auto mb-6"></div>
-        <div class="skeleton skeleton-line w-full h-4 max-w-3xl mx-auto"></div>
-        <div class="skeleton skeleton-line w-5/6 h-4 max-w-3xl mx-auto"></div>
-        <div class="skeleton skeleton-line w-4/5 h-4 max-w-3xl mx-auto mb-12"></div>
-      </div>
 
-      <!-- Card Grid Container -->
-      <section class="px-4 sm:px-6 lg:px-12 xl:px-16 mt-20">
-        <div class="w-full max-w-[1400px] mx-auto">
-          <div class="bg-[#F3F3F3] py-10 sm:py-16 px-4 sm:px-6 lg:px-10 rounded-[16px] max-w-[1300px] mx-auto">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center" style="perspective: 1200px;">
 
-              <!-- Card 1 -->
-              <div class="card relative group h-[400px] sm:h-[480px] md:h-[600px] w-full max-w-[450px] rounded-[16px] overflow-hidden shadow-lg">
-                <div class="skeleton skeleton-rect absolute inset-0 w-full h-full rounded-[16px]"></div>
-                <div class="absolute bottom-0 inset-x-0 p-5 bg-black/90 text-center">
-                  <div class="skeleton skeleton-line w-3/4 h-6 mx-auto"></div>
-                </div>
-              </div>
-
-              <!-- Card 2 -->
-              <div class="card relative group h-[400px] sm:h-[480px] md:h-[600px] w-full max-w-[600px] rounded-[16px] overflow-hidden shadow-lg mt-10 sm:mt-0 md:mt-12 lg:mt-16">
-                <div class="skeleton skeleton-rect absolute inset-0 w-full h-full rounded-[16px]"></div>
-                <div class="absolute bottom-0 inset-x-0 p-5 bg-black/90 text-center">
-                  <div class="skeleton skeleton-line w-3/4 h-6 mx-auto"></div>
-                </div>
-              </div>
-
-              <!-- Card 3 -->
-              <div class="card relative group h-[400px] sm:h-[480px] md:h-[600px] w-full max-w-[450px] rounded-[16px] overflow-hidden shadow-lg">
-                <div class="skeleton skeleton-rect absolute inset-0 w-full h-full rounded-[16px]"></div>
-                <div class="absolute bottom-0 inset-x-0 p-5 bg-black/90 text-center">
-                  <div class="skeleton skeleton-line w-3/4 h-6 mx-auto"></div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
-    
-    <!-- Services section -->
-    <section id="services" class="px-4 sm:px-5 md:px-8 lg:px-12 xl:px-16 max-w-[96rem] mx-auto mt-48">
-      <!-- Heading -->
-      <div class="bg-gray-100 py-10 text-center px-4">
-        <div class="skeleton skeleton-line w-3/4 h-10 mx-auto mb-4"></div>
-        <div class="skeleton skeleton-line w-full max-w-2xl mx-auto h-4"></div>
-        <div class="skeleton skeleton-line w-5/6 max-w-2xl mx-auto h-4"></div>
-        <div class="skeleton skeleton-line w-4/5 max-w-2xl mx-auto h-4"></div>
-      </div>
-
-      <!-- 1st Content -->
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-        <!-- Text Block -->
-        <div class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] p-6 sm:p-8 flex flex-col justify-between rounded-lg md:col-span-2 w-full max-w-[600px] mx-auto md:mx-0">
-          <div>
-            <span class="relative text-gray-50 text-3xl font-semibold mb-4 block">
-              01
-              <span class="absolute right-4 top-1/2 transform -translate-y-1/2 w-[2px] h-5 bg-white rotate-[25deg]"></span>
-            </span>
-            <div class="skeleton skeleton-line w-full h-8 mb-8"></div>
-            <div class="space-y-2 mt-8 sm:mt-12">
-              <div class="skeleton skeleton-line w-full h-4"></div>
-              <div class="skeleton skeleton-line w-11/12 h-4"></div>
-              <div class="skeleton skeleton-line w-10/12 h-4"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Image Block -->
-        <div class="h-[320px] sm:h-[400px] md:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0">
-          <div class="skeleton skeleton-rect w-full h-full rounded-lg shadow-md"></div>
-        </div>
-      </div>
-
-      <!-- 2nd Content -->
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-        <!-- Image Block -->
-        <div class="h-[320px] sm:h-[400px] md:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0">
-          <div class="skeleton skeleton-rect w-full h-full rounded-lg shadow-md"></div>
-        </div>
-
-        <!-- Text Block -->
-        <div class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] p-6 sm:p-8 flex flex-col justify-between rounded-lg md:col-span-2 w-full max-w-[620px] mx-auto md:mx-0">
-          <div>
-            <span class="relative text-gray-50 text-3xl font-semibold mb-4 block">
-              02
-              <span class="absolute right-4 top-1/2 transform -translate-y-1/2 w-[2px] h-5 bg-white rotate-[25deg]"></span>
-            </span>
-            <div class="skeleton skeleton-line w-full h-8 mb-8"></div>
-            <div class="space-y-2 mt-8 sm:mt-12">
-              <div class="skeleton skeleton-line w-full h-4"></div>
-              <div class="skeleton skeleton-line w-11/12 h-4"></div>
-              <div class="skeleton skeleton-line w-10/12 h-4"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3rd Content -->
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-        <!-- Text Block -->
-        <div class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] p-6 sm:p-8 flex flex-col justify-between rounded-lg md:col-span-2 w-full max-w-[620px] mx-auto md:mx-0">
-          <div>
-            <span class="relative text-gray-50 text-3xl font-semibold mb-4 block">
-              03
-              <span class="absolute right-4 top-1/2 transform -translate-y-1/2 w-[2px] h-5 bg-white rotate-[25deg]"></span>
-            </span>
-            <div class="skeleton skeleton-line w-full h-8 mb-8"></div>
-            <div class="space-y-2 mt-8 sm:mt-12">
-              <div class="skeleton skeleton-line w-full h-4"></div>
-              <div class="skeleton skeleton-line w-11/12 h-4"></div>
-              <div class="skeleton skeleton-line w-10/12 h-4"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Image Block -->
-        <div class="h-[320px] sm:h-[400px] md:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0">
-          <div class="skeleton skeleton-rect w-full h-full rounded-lg shadow-md"></div>
-        </div>
-      </div>
-
-      <!-- 4th Content -->
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-        <!-- Image Block -->
-        <div class="h-[320px] sm:h-[400px] md:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0">
-          <div class="skeleton skeleton-rect w-full h-full rounded-lg shadow-md"></div>
-        </div>
-
-        <!-- Text Block -->
-        <div class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] p-6 sm:p-8 flex flex-col justify-between rounded-lg md:col-span-2 w-full max-w-[620px] mx-auto md:mx-0">
-          <div>
-            <span class="relative text-gray-50 text-3xl font-semibold mb-4 block">
-              04
-              <span class="absolute right-4 top-1/2 transform -translate-y-1/2 w-[2px] h-5 bg-white rotate-[25deg]"></span>
-            </span>
-            <div class="skeleton skeleton-line w-full h-8 mb-8"></div>
-            <div class="space-y-2 mt-8 sm:mt-12">
-              <div class="skeleton skeleton-line w-full h-4"></div>
-              <div class="skeleton skeleton-line w-11/12 h-4"></div>
-              <div class="skeleton skeleton-line w-10/12 h-4"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Our Clients section -->
-    <section class="py-6 sm:py-8 md:py-12 lg:py-16 mx-auto px-4 sm:px-6 md:px-8 text-center mt-24 sm:mt-32 md:mt-48">
-      <div class="skeleton skeleton-line w-2/3 h-10 mx-auto mb-6 sm:mb-8"></div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12">
-      <div class="flex justify-around items-center flex-wrap gap-6 text-center text-gray-700">
-        <div class="w-1/2 sm:w-1/3 md:w-auto">
-          <div class="skeleton skeleton-line w-32 h-4 mx-auto mb-2"></div>
-          <div class="skeleton skeleton-line w-16 h-8 mx-auto"></div>
-        </div>
-        <div class="w-1/2 sm:w-1/3 md:w-auto">
-          <div class="skeleton skeleton-line w-32 h-4 mx-auto mb-2"></div>
-          <div class="skeleton skeleton-line w-16 h-8 mx-auto"></div>
-        </div>
-        <div class="w-full sm:w-1/3 md:w-auto">
-          <div class="skeleton skeleton-line w-32 h-4 mx-auto mb-2"></div>
-          <div class="skeleton skeleton-line w-16 h-8 mx-auto"></div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Logo Grid Section -->
-    <section class="bg-white py-8 sm:py-12 rounded-[12px] mx-4 sm:mx-auto max-w-[1250px]">
-      <div class="w-full px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16">
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-6 justify-items-center">
-          
-          <!-- Logo Cards -->
-          <div class="p-3 sm:p-4 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-            <div class="skeleton skeleton-rect w-full h-16 sm:h-20 rounded"></div>
-          </div>
-          <div class="p-3 sm:p-4 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-            <div class="skeleton skeleton-rect w-full h-10 rounded"></div>
-          </div>
-          <div class="p-3 sm:p-4 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-            <div class="skeleton skeleton-rect w-full h-14 rounded"></div>
-          </div>
-          <div class="p-3 sm:p-4 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-            <div class="skeleton skeleton-rect w-full h-14 rounded"></div>
-          </div>
-          <div class="p-3 sm:p-4 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-            <div class="skeleton skeleton-rect w-full h-16 sm:h-20 rounded"></div>
-          </div>
-          <div class="p-3 sm:p-4 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-            <div class="skeleton skeleton-rect w-full h-10 rounded"></div>
-          </div>
-          <div class="p-3 sm:p-4 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-            <div class="skeleton skeleton-rect w-full h-10 rounded"></div>
-          </div>
-          <div class="p-3 sm:p-4 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-            <div class="skeleton skeleton-rect w-full h-14 rounded"></div>
-          </div>
-          <div class="p-3 sm:p-4 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-            <div class="skeleton skeleton-rect w-full h-16 sm:h-20 rounded"></div>
-          </div>
-          <div class="p-3 sm:p-4 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-            <div class="skeleton skeleton-rect w-full h-14 rounded"></div>
-          </div>
-          <div class="p-3 sm:p-4 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-            <div class="skeleton skeleton-rect w-full h-10 rounded"></div>
-          </div>
-          <div class="p-3 sm:p-4 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-            <div class="skeleton skeleton-rect w-full h-16 sm:h-20 rounded"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Testimonial Section -->
-    <section class="w-full mt-20 px-4 sm:px-6 lg:px-6 xl:px-16">
-      <div class="bg-white border border-[#EFEFEF] rounded-[12px]
-                px-4 sm:px-8 md:px-8 lg:px-20 xl:px-28
-                py-16 sm:py-24 md:py-32 lg:py-40
-                grid grid-cols-1 md:grid-cols-[1fr_auto] md:gap-x-12 items-center
-                mx-4 sm:mx-auto max-w-[1250px]">
-        
-        <!-- Testimonial Content -->
-        <div class="relative text-center md:text-left">
-          <div class="skeleton skeleton-circle absolute -top-6 left-1 w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16"></div>
-
-          <div class="flex text-left mb-5 mt-16">
-            <div class="skeleton skeleton-line w-24 h-6"></div>
-          </div>
-
-          <div class="space-y-2 mb-10">
-            <div class="skeleton skeleton-line w-full h-4 text-left"></div>
-            <div class="skeleton skeleton-line w-11/12 h-4 text-left"></div>
-            <div class="skeleton skeleton-line w-10/12 h-4 text-left"></div>
-          </div>
-
-          <div class="flex items-end justify-between w-full max-w-lg">
-            <div class="space-y-1 text-left">
-              <div class="skeleton skeleton-line w-48 h-5"></div>
-              <div class="skeleton skeleton-line w-36 h-4"></div>
-            </div>
-            <div class="skeleton skeleton-circle w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 opacity-30 ml-4 flex-shrink-0 -mt-6 sm:-mt-8 self-end"></div>
-          </div>
-        </div>
-
-        <!-- Image Block -->
-        <div class="relative w-36 h-36 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-64 lg:h-64
-                    mx-auto md:mx-0 rounded-full overflow-hidden md:-mt-14 lg:-mt-10 md:ml-8">
-          <div class="skeleton skeleton-circle w-full h-full"></div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Footer skeleton -->
-    <section class="bg-black py-12 mt-24 px-4">
-      <div class="w-full max-w-[1300px] mx-auto">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
-          <div>
-            <div class="skeleton skeleton-line w-32 h-6 mb-4"></div>
-            <div class="space-y-3">
-              <div class="skeleton skeleton-line w-24 h-4"></div>
-              <div class="skeleton skeleton-line w-24 h-4"></div>
-              <div class="skeleton skeleton-line w-24 h-4"></div>
-            </div>
-          </div>
-          <div>
-            <div class="skeleton skeleton-line w-32 h-6 mb-4"></div>
-            <div class="space-y-3">
-              <div class="skeleton skeleton-line w-48 h-4"></div>
-              <div class="skeleton skeleton-line w-40 h-4"></div>
-              <div class="skeleton skeleton-line w-44 h-4"></div>
-            </div>
-          </div>
-          <div>
-            <div class="skeleton skeleton-line w-32 h-6 mb-4"></div>
-            <div class="flex space-x-4">
-              <div class="skeleton skeleton-circle w-6 h-6"></div>
-              <div class="skeleton skeleton-circle w-6 h-6"></div>
-              <div class="skeleton skeleton-circle w-6 h-6"></div>
-              <div class="skeleton skeleton-circle w-6 h-6"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</template>
-
-    <div id="real-content" style="display: none;">
+    <div id="actual-page-content">
    <header
             class="py-8 mt-4 max-w-8xl mx-auto rounded-t-[24px] rounded-b-none bg-black shadow-lg ml-4 mr-4"
         >
@@ -909,7 +576,7 @@
 
  <!-- Agile Approach  -->
 
-<section class="py-10 sm:py-16 lg:py-24 w-full mt-24 sm:mt-32 lg:mt-20 max-w-[98%] mx-auto">
+<section class="py-10 sm:py-16 lg:py-24 w-full mt-24 sm:mt-32 lg:mt-48 max-w-[98%] mx-auto">
   <!-- Heading -->
   <div class="text-center px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl sm:text-4xl lg:text-[48px] leading-tight tracking-tight mb-6 font-['Mona_Sans_Expanded']">
@@ -924,9 +591,9 @@
   </div>
 
   <!-- Card Grid Container -->
-<section class="px-2 sm:px-2 lg:px-12 xl:px-16 pt-10">
+<section class="px-4 sm:px-6 lg:px-12 xl:px-16 mt-20">
   <div class="w-full max-w-[1400px] mx-auto">
-    <div class="bg-[#F3F3F3] py-10 sm:py-16 px-2 sm:px-2 lg:px-10 rounded-[16px] max-w-[1300px] mx-auto">
+    <div class="bg-[#F3F3F3] py-10 sm:py-16 px-4 sm:px-6 lg:px-10 rounded-[16px] max-w-[1300px] mx-auto">
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center"
         style="perspective: 1200px;"
@@ -1000,9 +667,8 @@
     </p>
   </div>
 
- <div class="pt-20">
-   <!-- 1st Content -->
- <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
+  <!-- 1st Content -->
+ <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
   <!-- Text Block -->
   <div class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] p-6 sm:p-8 flex flex-col justify-between rounded-lg md:col-span-2 w-full max-w-[600px] mx-auto md:mx-0">
     <div>
@@ -1029,7 +695,7 @@
 
 
   <!-- 2nd Content -->
-<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
   <!-- Image Block -->
   <div class="h-[320px] sm:h-[400px] md:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0">
     <img
@@ -1058,7 +724,7 @@
 
 
   <!-- 3rd Content -->
-<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
   <!-- Text Block -->
   <div class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] p-6 sm:p-8 flex flex-col justify-between rounded-lg md:col-span-2 w-full max-w-[620px] mx-auto md:mx-0">
     <div>
@@ -1086,7 +752,7 @@
 </div>
 
   <!-- 4th Content -->
-<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
   <!-- Image Block -->
   <div class="h-[320px] sm:h-[400px] md:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0">
     <img
@@ -1112,7 +778,6 @@
     </div>
   </div>
 </div>
- </div>
 
 </section>
 
@@ -1122,15 +787,15 @@
 
 
 <!-- Title Section -->
-<section class="sm:py-8 md:py-10 lg:py-12 mx-auto px-4 sm:px-6 md:px-8 text-center mt-24 sm:mt-32 md:mt-48 mb-0 pb-0">
-  <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold  sm:mb-2 font-['Mona_Sans_Expanded']">
+<section class="py-6 sm:py-8 md:py-12 lg:py-16 mx-auto px-4 sm:px-6 md:px-8 text-center mt-24 sm:mt-32 md:mt-48">
+  <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 sm:mb-8 font-['Mona_Sans_Expanded']">
     <span class="text-gray-900">Our</span>
     <span class="text-[#F40202] font-normal italic">Clients</span>
   </h2>
 </section>
 
 <!-- Stats Section -->
-<section class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 pt-0 mt-2">
+<section class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12">
   <div class="flex justify-around items-center flex-wrap gap-6 text-center text-gray-700">
     <div class="w-1/2 sm:w-1/3 md:w-auto">
       <p class="text-base sm:text-lg md:text-xl text-gray-500 font-['Mona_Sans_Expanded']">Brands partnered</p>
@@ -1150,8 +815,8 @@
 
 <!-- Logo Section -->
 <!-- Logo Section with Wider Margins -->
-<section class="bg-white py-8 sm:py-12 rounded-[12px] mx-4 sm:mx-auto lg:mx-auto max-w-[1250px] mt-48">
-  <div class="w-full px-2 sm:px-2 md:px-10 lg:px-12 xl:px-16 mx-auto">
+<section class="bg-white py-8 sm:py-12 rounded-[12px] mx-auto  max-w-[1250px]">
+  <div class="w-full px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2 justify-items-center">
       
       <!-- Logo Cards -->
@@ -1226,8 +891,8 @@
 
 
   <!-- Full Width Wrapper -->
-<section class="w-full mt-8 px-4 sm:px-6 lg:px-6 xl:px-16">
-  <div class="w-full max-w-[1400px] mx-auto py-14 sm:py-20 md:py-24">
+<section class="w-full mt-20 px-4 sm:px-6 lg:px-6 xl:px-16">
+  <div class="w-full max-w-[1400px] mx-auto py-16 sm:py-20 md:py-24">
     <div class="bg-white border border-[#EFEFEF] rounded-[12px]
                 px-4 sm:px-8 md:px-8  lg:px-20 xl:px-28
                 py-16 sm:py-24 md:py-32 lg:py-40
@@ -1464,20 +1129,190 @@
   </div>
 </section>
 
+// ... (your existing HTML and CSS) ...
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Renamed variable for clarity, as this is now the full-page skeleton overlay
+        const fullPageSkeletonOverlay = document.getElementById('full-page-skeleton-overlay');
+        const actualPageContent = document.getElementById('actual-page-content');
+
+        let loaderTimeoutId;
+        let contentLoaded = false; // Flag to check if content is ready
+
+        // --- Step 1: Hide content immediately with CSS, and prepare for reveal ---
+        // (This is already handled by your CSS: #actual-page-content { display: none; opacity: 0; })
+
+        // --- Step 2: Define the function to show the actual content ---
+        // This function will be called when everything is loaded OR when the timeout passes.
+        function showActualContent() {
+            if (actualPageContent) {
+                // Ensure the overlay is hidden
+                if (fullPageSkeletonOverlay && fullPageSkeletonOverlay.style.display !== 'none') {
+                    fullPageSkeletonOverlay.classList.add('fade-out');
+                    fullPageSkeletonOverlay.addEventListener('transitionend', function handler() {
+                        fullPageSkeletonOverlay.style.display = 'none';
+                        fullPageSkeletonOverlay.removeEventListener('transitionend', handler);
+                    }, { once: true });
+                }
+
+                // Reveal actual content
+                requestAnimationFrame(() => {
+                    actualPageContent.style.display = 'block';
+                    requestAnimationFrame(() => {
+                        actualPageContent.style.opacity = '1';
+                    });
+                });
+            } else {
+                console.error("Error: '#actual-page-content' element not found.");
+            }
+        }
+
+        // --- Step 3: Implement conditional loader display ---
+
+        // Set a minimum time the loader should be displayed if it does show up,
+        // and also the delay before it appears.
+        const MIN_LOADER_DISPLAY_TIME = 500; // milliseconds - once shown, stay for at least this long
+        const LOADER_APPEAR_DELAY = 200;    // milliseconds - only show loader if content isn't ready by this time
+
+        // Initially hide the loader overlay by default, and only show it if content takes long
+        if (fullPageSkeletonOverlay) {
+            fullPageSkeletonOverlay.style.opacity = '0'; // Start hidden
+            fullPageSkeletonOverlay.style.visibility = 'hidden'; // Ensure it doesn't take up space/interfere before visible
+            fullPageSkeletonOverlay.style.transition = 'opacity 0.5s ease-out, visibility 0s linear 0.5s'; // Transition opacity, then hide visibility
+        }
+
+
+        // Start a timer to show the loader if content isn't loaded quickly
+        loaderTimeoutId = setTimeout(() => {
+            if (!contentLoaded && fullPageSkeletonOverlay) { // Only show if content hasn't finished loading yet
+                fullPageSkeletonOverlay.style.visibility = 'visible'; // Make visible (instantly)
+                fullPageSkeletonOverlay.style.opacity = '1'; // Trigger fade-in
+            }
+        }, LOADER_APPEAR_DELAY);
+
+
+        // This function simulates *all* your content being loaded.
+        // In a real scenario, you'd call this after images, fonts, API calls, etc., are complete.
+        function allContentReady() {
+            contentLoaded = true; // Mark content as ready
+
+            // Clear the timeout for showing the loader, if it hasn't fired yet
+            clearTimeout(loaderTimeoutId);
+
+            if (fullPageSkeletonOverlay && fullPageSkeletonOverlay.style.opacity === '1') {
+                // If the loader is currently visible, ensure it stays for a minimum time
+                // before fading out and revealing content.
+                setTimeout(() => {
+                    showActualContent();
+                }, MIN_LOADER_DISPLAY_TIME);
+            } else {
+                // If the loader never became visible (because content loaded fast),
+                // just show the actual content immediately.
+                showActualContent();
+            }
+        }
+
+
+        // --- Example of how to call `allContentReady()` ---
+        // For demonstration, we'll use a delayed call to simulate actual loading time.
+        // REPLACE THIS with your real loading checks (images, APIs, etc.)
+        setTimeout(() => {
+            allContentReady(); // Simulate all content loaded after some time
+        }, 1000); // This 2000ms is the "simulated total load time"
+
+
+        // --- OPTION 2: More Robust Loading Check (Re-integrate your previous logic here) ---
+        /*
+        // IMPORTANT: If you use this, comment out the `setTimeout` that calls `allContentReady()` above.
+        // Also ensure you have FontFaceObserver if checking fonts.
+
+        // let totalResourcesToLoad = 0;
+        // let loadedResourcesCount = 0;
+
+        // function checkAllResourcesLoaded() {
+        //     // console.log(`Resources: Loaded ${loadedResourcesCount} of ${totalResourcesToLoad}`);
+        //     if (loadedResourcesCount >= totalResourcesToLoad && totalResourcesToLoad > 0) {
+        //         allContentReady(); // Call our new master function
+        //     }
+        // }
+
+        // // A. Monitor Images in the actual content (including your logo)
+        // const images = actualPageContent.querySelectorAll('img');
+        // images.forEach(img => {
+        //     if (!img.complete) {
+        //         totalResourcesToLoad++;
+        //         img.addEventListener('load', () => {
+        //             loadedResourcesCount++;
+        //             checkAllResourcesLoaded();
+        //         }, { once: true });
+        //         img.addEventListener('error', () => {
+        //             console.warn(`Error loading image: ${img.src}`);
+        //             loadedResourcesCount++;
+        //             checkAllResourcesLoaded();
+        //         }, { once: true });
+        //     }
+        // });
+
+        // // B. Monitor Font Loading (if using custom web fonts that affect layout)
+        // if (typeof FontFaceObserver !== 'undefined') {
+        //     const fontMonaSans = new FontFaceObserver('Mona Sans Expanded', { weight: 800 });
+        //     totalResourcesToLoad++;
+        //     fontMonaSans.load().then(() => {
+        //         loadedResourcesCount++;
+        //         checkAllResourcesLoaded();
+        //     }).catch(() => {
+        //         console.warn('Font loading failed, but proceeding anyway.');
+        //         loadedResourcesCount++;
+        //         checkAllResourcesLoaded();
+        //     });
+        // }
+
+        // // C. Simulate API calls (replace with your actual fetch calls)
+        // // totalResourcesToLoad++;
+        // // fetch('/api/your-data')
+        // //     .then(response => response.json())
+        // //     .then(data => {
+        // //         loadedResourcesCount++;
+        // //         checkAllResourcesLoaded();
+        // //     })
+        // //     .catch(error => {
+        // //         console.error("API call failed:", error);
+        // //         loadedResourcesCount++;
+        // //         checkAllResourcesLoaded();
+        // //     });
+
+        // // Initial check: If no specific resources were found, assume ready to display
+        // if (totalResourcesToLoad === 0) {
+        //     totalResourcesToLoad = 1;
+        //     loadedResourcesCount = 1;
+        // }
+        // checkAllResourcesLoaded();
+        */
+
+
+        // JavaScript for your mobile menu toggle (for the actual header)
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                hamburgerIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+        }
+    });
+</script>
 
 
 
-
-    </div>
-
-
-<!-- Skeleton loader is now handled by skeleton_loader.js -->
-
-
-
-    <script src="./slow-connection-detector.js"></script>
     <script src="./script.js"></script>
-
+    </div>
   </body>
+
+
+
 </html>
 
