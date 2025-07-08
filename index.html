@@ -12,6 +12,7 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./skeleton.css">
+    <link rel="stylesheet" href="./style.css">
     <style src="./output.css"></style>
     <style>
     
@@ -598,22 +599,21 @@
   </div>
 </template>
 
-    <div id="real-content" style="display: none;">
+    <div id="real-content">
    <header
-            class="py-8 mt-4 max-w-8xl mx-auto rounded-t-[24px] rounded-b-none bg-black shadow-lg ml-4 mr-4"
+            class="fixed top-0 left-0 right-0 z-50 py-4  w-full bg-black shadow-lg"
         >
-            <div
-                class="container mt-5 mx-auto flex items-center justify-between px-6 md:px-8 lg:px-16"
-            >
+           <div class="w-full  flex items-center lg:justify-start justify-between max-w-7xl mx-auto">
+
                 <div class="flex items-center">
                     <img
                         src="./images/logo22.svg"
                         alt="Arodos Logo"
-                        class="h-auto object-contain flex-shrink-0 mr-2 max-h-[200px] w-auto max-w-[300px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-[350px]"
+                        class="h-auto object-contain flex-shrink-0  max-h-[200px] w-auto max-w-[300px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-[350px] ml-4"
                     />
                 </div>
 
-                <nav class="hidden md:block">
+                <nav class="hidden md:block lg:ml-auto">
                     <ul class="flex space-x-8">
                         <li>
                             <a
@@ -692,7 +692,7 @@
                 </div>
             </div>
 
-            <nav id="mobile-menu" class="md:hidden hidden bg-gray-800 py-4 px-6">
+            <nav id="mobile-menu" class="md:hidden hidden py-4 px-6 w-full">
                 <ul class="flex flex-col items-center space-y-4">
                     <li>
                         <a
@@ -733,114 +733,105 @@
             </nav>
         </header>
 
-<main
-  class="relative ml-4 mr-4 flex flex-col justify-center items-center max-w-8xl mx-auto overflow-hidden min-h-[calc(100vh+200px)] lg:min-h-[calc(100vh+100px)] py-10"
-  style="border-bottom-left-radius: 40px; border-bottom-right-radius: 40px"
+        <div class="mx-4 sm:mx-6 md:mx-8 lg:mx-auto max-w-screen-xl">
+  <!-- Your <main> here -->
+
+    <main
+  class="relative flex flex-col justify-center items-center max-w-screen-xl mx-auto overflow-hidden min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-60px)] lg:min-h-[calc(100vh-20px)] py-8 sm:py-12 px-4 sm:px-6 md:px-10 mt-32 sm:mt-20 md:mt-44 rounded-[20px] sm:rounded-[40px] shadow-xl"
 >
   <video
     autoplay
     muted
     loop
     playsinline
-    class="absolute inset-0 w-full h-full object-cover z-0"
+    webkit-playsinline
+    preload="auto"
+    class="absolute inset-0 w-full h-full object-cover z-0 scale-105 transform video-bg"
+    poster="./images/hero-poster.jpg"
   >
     <source src="./images/hero section vid.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
-  <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
+  <div class="absolute inset-1 bg-gradient-to-b from-black/40 via-black/50 to-black/75 z-0"></div>
 
   <section
-    class="text-white p-6 md:p-10 text-center relative z-10 flex-grow flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-16"
+    class="text-white text-center relative z-10 flex-grow flex items-center justify-center pt-10 sm:pt-12 w-full"
   >
     <div class="max-w-4xl mx-auto">
-      <div class="flex items-center justify-center mt-4 mb-6 space-x-3">
-        <img src="./images/happy-customer1.png" alt="Trust Badge" class="w-30 h-30" />
-      </div>
+      <!-- Trust Badge -->
+    <div class="flex items-center justify-center mt-2 mb-6">
+  <img
+    src="./images/happy-customer1.png"
+    alt="Happy Customer Trust Badge"
+    class="w-24 sm:w-28 md:w-36 lg:w-44 xl:w-52 2xl:w-60 object-contain drop-shadow-lg transition-all duration-300"
+  />
+</div>
 
-      <h1 class="text-center leading-none font-['Mona_Sans']">
-        <span
-          class="block text-2xl sm:text-6xl md:text-5xl lg:text-[72px] xl:text-[80px] 2xl:text-[88px] font-extrabold tracking-[-0.01em] mb-[-10px] sm:mb-[-14px] md:mb-[-16px] leading-[2.4rem] sm:leading-[3.4rem] md:leading-[4.2rem] lg:leading-[4.8rem] xl:leading-[5rem]"
-        >
-          Built to
-          <span
-            class="text-[#F40202] italic text-2xl sm:text-6xl md:text-5xl lg:text-[74px] xl:text-[82px] 2xl:text-[90px] font-[InstrumentSerif] inline-block -mx-1 leading-[2.4rem] sm:leading-[3.4rem] md:leading-[4.2rem] lg:leading-[4.8rem] xl:leading-[5rem]"
-          >
-            Shape
-          </span>
-          the
-        </span>
-        <span
-          class="block text-2xl sm:text-6xl md:text-5xl lg:text-[72px] xl:text-[80px] 2xl:text-[88px] font-extrabold tracking-[-0.01em] mt-[4px] sm:mt-[6px] md:mt-[8px] lg:mt-[10px] xl:mt-[12px] 2xl:mt-[14px] leading-[2.4rem] sm:leading-[3.4rem] md:leading-[4.2rem] lg:leading-[4.8rem] xl:leading-[5.2rem]"
-        >
-          Future
-        </span>
-      </h1>
 
-      <p
-        class="text-sm sm:text-base md:text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.4rem] sm:leading-[1.5rem] md:leading-[1.6rem] lg:leading-[1.8rem] tracking-[-0.02em] font-normal text-center text-gray-300 max-w-[300px] sm:max-w-[500px] md:max-w-3xl mx-auto mb-8 mt-5 font-['Mona_Sans']"
-      >
-        Welcome to Arodos Technologies. We are a digital innovation partner
-        focused on building high-performance, scalable solutions across ERP,
-        CRM, AI, and mobile app platforms.
+      <!-- Headline -->
+<h1 class="font-['Mona_Sans'] font-extrabold tracking-tight text-center text-3xl sm:text-5xl md:text-[52px] lg:text-[66px] xl:text-[76px] leading-tight drop-shadow-lg">
+  <span class="block">
+    Built to <span class="text-[#F40202] italic font-[InstrumentSerif]">shape</span> the
+  </span>
+<span class="block mt-0.75 sm:mt-2 md:mt-1.5 lg:mt-3">
+  Future
+</span>
+
+</h1>
+
+
+
+      <!-- Subheading -->
+      <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white text-center max-w-3xl mx-auto mt-4 sm:mt-6 leading-relaxed tracking-[-0.015em] font-['Mona_Sans'] drop-shadow-md">
+        Welcome to Arodos Technologies. We are a digital innovation partner focused on building high-performance, scalable solutions across ERP, CRM, AI, and mobile app platforms.
       </p>
 
-      <div class="flex justify-center">
+      <!-- CTA Button -->
+      <div class="flex justify-center mt-6">
         <button
           id="exploreBtn"
-          class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] text-white font-semibold mt-6 rounded-[12px] py-3 sm:py-4 md:py-5 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-40 flex items-center justify-center gap-3 sm:gap-4 text-sm sm:text-base md:text-lg lg:text-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+          aria-label="Explore our expertise"
+          class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] text-white font-semibold rounded-[12px] py-3 sm:py-4 px-6 sm:px-10 text-base sm:text-lg lg:text-xl shadow-lg hover:shadow-xl hover:scale-105 hover:brightness-110 transition-all duration-300 border border-white/20 backdrop-filter backdrop-blur-sm inline-flex items-center gap-3"
         >
           <span id="btnText">Explore Our Expertise</span>
           <span
             id="spinner"
-            class="hidden w-4 sm:w-5 md:w-6 h-4 border-2 border-t-transparent border-white rounded-full"
+            class="hidden w-5 h-5 border-2 border-t-transparent border-white rounded-full"
             style="animation: spin 0.5s linear infinite"
           ></span>
           <img
             id="arrowIcon"
             src="./images/arrow--up-right.svg"
-            alt="Arrow Icon"
-            class="w-4 sm:w-5 md:w-6 h-auto"
+            alt=""
+            class="w-5 h-auto"
           />
         </button>
       </div>
 
-      <div
-        class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16 lg:gap-20 mt-20 sm:mt-32 md:mt-40 text-white"
-      >
-        <div class="text-center">
-          <p
-            class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium font-['Mona_Sans_Expanded'] text-gray-400"
-          >
+      <!-- Stats Section -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 sm:mt-16 px-4 sm:px-6 backdrop-blur-sm bg-black/10 py-6 rounded-xl">
+        <div class="text-center hover:bg-white/10 transition duration-300 rounded-lg p-4">
+          <p class="text-sm sm:text-base lg:text-lg font-medium text-white/80 font-['Mona_Sans_Expanded']">
             On-Time Delivery
           </p>
-          <p
-            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold mt-2 text-gray-400 font-['Mona_Sans_Expanded']"
-          >
+          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white drop-shadow-md font-['Mona_Sans_Expanded'] mt-2">
             98%
           </p>
         </div>
-        <div class="text-center">
-          <p
-            class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium font-['Mona_Sans_Expanded'] text-gray-400"
-          >
+        <div class="text-center hover:bg-white/10 transition duration-300 rounded-lg p-4">
+          <p class="text-sm sm:text-base lg:text-lg font-medium text-white/80 font-['Mona_Sans_Expanded']">
             Apps Launched
           </p>
-          <p
-            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold mt-2 text-gray-400 font-['Mona_Sans_Expanded']"
-          >
+          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white drop-shadow-md font-['Mona_Sans_Expanded'] mt-2">
             75
           </p>
         </div>
-        <div class="text-center">
-          <p
-            class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium font-['Mona_Sans_Expanded'] text-gray-400"
-          >
+        <div class="text-center hover:bg-white/10 transition duration-300 rounded-lg p-4">
+          <p class="text-sm sm:text-base lg:text-lg font-medium text-white/80 font-['Mona_Sans_Expanded']">
             Projects Completed
           </p>
-          <p
-            class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl lg:text-5xl xl:text-6xl font-extrabold mt-2 text-gray-400 font-['Mona_Sans_Expanded']"
-          >
+          <p class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white drop-shadow-md font-['Mona_Sans_Expanded'] mt-2">
             120+
           </p>
         </div>
@@ -848,6 +839,10 @@
     </div>
   </section>
 </main>
+</div>
+
+
+
 
 
 
@@ -856,20 +851,30 @@
 <section class="w-full py-2 mt-12">
   <div class="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-16 rounded-[12px]">
     <section class="py-12 mt-16 max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-2 justify-center">
-        
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-6 justify-center">
+
         <!-- Our Vision Card -->
-        <div class="w-full max-w-[600px]">
-          <div class="relative shadow-lg overflow-hidden rounded-[12px] flex flex-col justify-start text-gray-50 min-h-[600px] md:min-h-[800px]">
-            <video src="./images/our vision.mp4" autoplay loop muted class="absolute inset-0 w-full h-full object-cover z-0 filter brightness-75"></video>
-            <div class="absolute inset-x-0 w-full bg-white/5 backdrop-blur-md font-[mona_sans] flex items-center pt-16 pb-8 px-6 text-gray-100 space-x-4">
-              <span class="absolute left-8 top-24 -translate-y-1/2 size-3 bg-[#F40202] rounded-full"></span>
-              <div class="flex-grow pl-4">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-['Mona_Sans_Expanded'] mb-4">
+        <div class="w-full max-w-2xl mx-auto">
+          <div class="relative shadow-lg overflow-hidden rounded-[12px] flex flex-col justify-start text-gray-50 min-h-[600px] md:min-h-[720px] xl:min-h-[760px]">
+            <!-- Background Video -->
+            <video src="./images/our vision.mp4" autoplay loop muted playsinline
+              class="absolute inset-0 w-full h-full object-cover z-0 filter brightness-75"></video>
+
+            <!-- Overlay for readability -->
+            <div class="absolute inset-0 bg-black/30 backdrop-blur-md z-0"></div>
+
+            <!-- Content Overlay -->
+            <div
+              class="relative z-10 font-[mona_sans] flex items-center py-10 sm:py-12 md:py-16 px-6 sm:px-8 md:px-10 text-gray-100 space-x-4">
+              <span class="absolute left-6 top-14 sm:top-20 size-3 bg-[#F40202] rounded-full"></span>
+              <div class="flex-grow pl-6">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-['Mona_Sans_Expanded'] mb-3 leading-tight">
                   <span class="font-bold">Our</span> <span class="font-normal italic">Vision</span>
                 </h2>
-                <p class="leading-relaxed text-base sm:text-lg">
-                  At Arodos, innovation drives us forward. We explore bold ideas and technologies, crafting impactful solutions that evolve with client needs, ensuring we always stay ahead in a fast-changing digital world.
+                <p class="text-sm sm:text-base md:text-lg leading-relaxed text-white/90">
+                  At Arodos, innovation drives us forward. We explore bold ideas and technologies, crafting impactful
+                  solutions that evolve with client needs, ensuring we always stay ahead in a fast-changing digital
+                  world.
                 </p>
               </div>
             </div>
@@ -877,17 +882,27 @@
         </div>
 
         <!-- Our Mission Card -->
-        <div class="w-full max-w-[600px]">
-          <div class="relative shadow-lg overflow-hidden rounded-[12px] flex flex-col justify-end text-gray-50 min-h-[600px] md:min-h-[800px]">
-            <video src="./images/Our mission.mp4" autoplay loop muted class="absolute inset-0 w-full h-full object-cover z-0 filter brightness-75"></video>
-            <div class="absolute inset-x-0 bottom-0 w-full bg-white/10 backdrop-blur-md font-[mona_sans] flex items-center pt-8 pb-16 px-6 text-gray-100 space-x-4">
-              <span class="absolute left-8 top-14 -translate-y-1/2 size-3 bg-[#F40202] rounded-full"></span>
-              <div class="flex-grow pl-4">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-['Mona_Sans_Expanded'] mb-4">
+        <div class="w-full max-w-2xl mx-auto">
+          <div class="relative shadow-lg overflow-hidden rounded-[12px] flex flex-col justify-end text-gray-50 min-h-[600px] md:min-h-[720px] xl:min-h-[760px]">
+            <!-- Background Video -->
+            <video src="./images/Our mission.mp4" autoplay loop muted playsinline
+              class="absolute inset-0 w-full h-full object-cover z-0 filter brightness-75"></video>
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-black/30 backdrop-blur-md z-0"></div>
+
+            <!-- Content -->
+            <div
+              class="relative z-10 font-[mona_sans] flex items-center py-10 sm:py-12 md:py-16 px-6 sm:px-8 md:px-10 text-gray-100 space-x-4">
+              <span class="absolute left-6 top-14 sm:top-20 size-3 bg-[#F40202] rounded-full"></span>
+              <div class="flex-grow pl-6">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-['Mona_Sans_Expanded'] mb-3 leading-tight">
                   <span class="font-bold">Our</span> <span class="font-normal italic">Mission</span>
                 </h2>
-                <p class="leading-relaxed text-base sm:text-lg">
-                  Our clients guide every decision. We deeply understand their goals, creating custom solutions that deliver real value. As they grow and thrive, we do too — building lasting partnerships rooted in success.
+                <p class="text-sm sm:text-base md:text-lg leading-relaxed text-white/90">
+                  Our clients guide every decision. We deeply understand their goals, creating custom solutions that
+                  deliver real value. As they grow and thrive, we do too — building lasting partnerships rooted in
+                  success.
                 </p>
               </div>
             </div>
@@ -900,42 +915,37 @@
 </section>
 
 
-
-
-
-
-
-
-
  <!-- Agile Approach  -->
 
 <section class="py-10 sm:py-16 lg:py-24 w-full mt-24 sm:mt-32 lg:mt-20 max-w-[98%] mx-auto">
   <!-- Heading -->
   <div class="text-center px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl sm:text-4xl lg:text-[48px] leading-tight tracking-tight mb-6 font-['Mona_Sans_Expanded']">
-      <span class="text-[#F40202] font-normal italic">Agile</span>
-      <span class="font-black">Approach</span>
-    </h2>
+  <h2 class="text-3xl sm:text-4xl lg:text-[48px] leading-tight tracking-tight mb-6 font-['Mona_Sans_Expanded']">
+    <span class="text-[#F40202] font-normal italic">Agile</span>
+    <span class="font-black">Approach</span>
+  </h2>
 
-    <p class="text-gray-700 text-sm sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed mb-12 font-['Mona_Sans'] font-light">
-      We thrive on collaboration, combining professional expertise with a problem-solving mindset. Our team works
-      seamlessly to deliver tailored, scalable solutions—ensuring quality, agility, and measurable impact at every step.
-    </p>
-  </div>
+  <p class="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mb-12 font-['Mona_Sans'] font-light text-balance">
+    We thrive through seamless collaboration, combining technical expertise with a problem-solving mindset.
+    Our team delivers scalable, custom-fit solutions—ensuring agility, built-in quality, and measurable impact
+    throughout the journey.
+  </p>
+</div>
+
 
   <!-- Card Grid Container -->
-<section class="px-2 sm:px-2 lg:px-12 xl:px-16 pt-10">
+<section  class="px-1 sm:px-0 md:px-4 lg:px-10 xl:px-16 pt-10">
   <div class="w-full max-w-[1400px] mx-auto">
-    <div class="bg-[#F3F3F3] py-10 sm:py-16 px-2 sm:px-2 lg:px-10 rounded-[16px] max-w-[1300px] mx-auto">
+    <div class="bg-[#F3F3F3] py-10 sm:py-16 px-2 sm:px-4 lg:px-12 rounded-[16px] max-w-[1300px] mx-auto">
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-10 md:gap-y-14 justify-items-center"
         style="perspective: 1200px;"
       >
 
         <!-- Card 1 -->
-        <div class="card relative group h-[400px] sm:h-[480px] md:h-[600px] w-full max-w-[450px]
+        <div class="card relative group h-[400px] sm:h-[480px] md:h-[600px] w-full max-w-[95%] sm:max-w-[95%] md:max-w-[550px] lg:max-w-[500px]
                     rounded-[16px] overflow-hidden transition-transform duration-300 transform
-                    sm:hover:rotate-y-1 sm:hover:rotate-x-1 shadow-lg hover:shadow-2xl">
+                    hover:rotate-y-1 hover:rotate-x-1 shadow-lg hover:shadow-2xl">
           <img src="./images/customer first.jpg" alt="Customer First"
                class="absolute inset-0 w-full h-full object-cover rounded-[16px]" />
           <div class="absolute bottom-0 inset-x-0 p-5 bg-black/90 text-center">
@@ -946,10 +956,9 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="card relative group h-[400px] sm:h-[480px] md:h-[600px] w-full max-w-[600px]
+        <div class="card relative group h-[400px] sm:h-[480px] md:h-[600px] w-full max-w-[95%] sm:max-w-[90%] md:max-w-[550px] lg:max-w-[500px]
                     rounded-[16px] overflow-hidden transition-transform duration-300 transform
-                    hover:rotate-y-1 hover:rotate-x-1 shadow-lg hover:shadow-2xl
-                    mt-10 sm:mt-0 md:mt-12 lg:mt-16">
+                    hover:rotate-y-1 hover:rotate-x-1 shadow-lg hover:shadow-2xl mt-10">
           <img src="./images/professional.jpg" alt="Professional"
                class="absolute inset-0 w-full h-full object-cover rounded-[16px]" />
           <div class="absolute bottom-0 inset-x-0 p-5 bg-black/90 text-center">
@@ -960,7 +969,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="card relative group h-[400px] sm:h-[480px] md:h-[600px] w-full max-w-[450px]
+        <div class="card relative group h-[400px] sm:h-[480px] md:h-[600px] w-full max-w-[95%] sm:max-w-[90%] md:max-w-[550px] lg:max-w-[500px]
                     rounded-[16px] overflow-hidden transition-transform duration-300 transform
                     hover:rotate-y-1 hover:rotate-x-1 shadow-lg hover:shadow-2xl">
           <img src="./images/problem solver.jpg" alt="Problem Solver"
@@ -978,6 +987,8 @@
 </section>
 
 
+
+
 </section>
 
 
@@ -989,20 +1000,25 @@
 
 <!-- Our Services -->
 
-   <section id="services" class="px-4 sm:px-5 md:px-8 lg:px-12 xl:px-16 max-w-[96rem] mx-auto mt-48">
+   <section id="services" class="px-4 sm:px-5 md:px-8 lg:px-12 xl:px-16 max-w-[96rem] mx-auto mt-28">
   <!-- Heading -->
-  <div class="bg-gray-100 py-10 text-center px-4">
-    <h2 class="text-4xl sm:text-4xl md:text-5xl font-semibold mb-4 font-['Mona_Sans_Expanded']">
-      <span class="text-black">Our</span> <span class="text-[#F40202] font-normal italic">Services</span>
-    </h2>
-    <p class="text-gray-700 leading-relaxed max-w-2xl mx-auto font-['Mona_Sans']">
-      Transforming visionary ideas into powerful, user-centric digital solutions that drive innovation, enhance operational efficiency, and accelerate sustainable business growth in an ever-evolving digital landscape.
-    </p>
-  </div>
+ <div class="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 text-center">
+  <!-- Heading -->
+  <h2 class="text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] font-['Mona_Sans_Expanded'] font-bold mb-6 leading-tight tracking-tight">
+    <span class="text-black">Our</span>
+    <span class="text-[#F40202] font-normal italic">Services</span>
+  </h2>
 
- <div class="pt-20">
+  <!-- Description -->
+  <p class="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl font-['Mona_Sans'] font-light leading-relaxed max-w-3xl mx-auto text-balance">
+    We transform visionary ideas into powerful, user-centric digital products—driving innovation, enhancing operational agility, and accelerating sustainable growth in a constantly evolving world.
+  </p>
+</div>
+
+
+ <div class="pt-10">
    <!-- 1st Content -->
- <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
+ <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto  sm:px-2 lg:px-12 xl:px-16">
   <!-- Text Block -->
   <div class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] p-6 sm:p-8 flex flex-col justify-between rounded-lg md:col-span-2 w-full max-w-[600px] mx-auto md:mx-0">
     <div>
@@ -1029,7 +1045,7 @@
 
 
   <!-- 2nd Content -->
-<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto sm:px-2 lg:px-12 xl:px-16">
   <!-- Image Block -->
   <div class="h-[320px] sm:h-[400px] md:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0">
     <img
@@ -1058,7 +1074,7 @@
 
 
   <!-- 3rd Content -->
-<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto sm:px-2 lg:px-12 xl:px-16">
   <!-- Text Block -->
   <div class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] p-6 sm:p-8 flex flex-col justify-between rounded-lg md:col-span-2 w-full max-w-[620px] mx-auto md:mx-0">
     <div>
@@ -1086,7 +1102,7 @@
 </div>
 
   <!-- 4th Content -->
-<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto sm:px-2 lg:px-12 xl:px-16">
   <!-- Image Block -->
   <div class="h-[320px] sm:h-[400px] md:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0">
     <img
@@ -1122,7 +1138,7 @@
 
 
 <!-- Title Section -->
-<section class="sm:py-8 md:py-10 lg:py-12 mx-auto px-4 sm:px-6 md:px-8 text-center mt-24 sm:mt-32 md:mt-48 mb-0 pb-0">
+<section class="sm:py-8 md:py-10 lg:py-12 mx-auto px-4 sm:px-6 md:px-8 text-center mt-24 sm:mt-24 md:mt-28 mb-0 pb-0">
   <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold  sm:mb-2 font-['Mona_Sans_Expanded']">
     <span class="text-gray-900">Our</span>
     <span class="text-[#F40202] font-normal italic">Clients</span>
@@ -1150,46 +1166,46 @@
 
 <!-- Logo Section -->
 <!-- Logo Section with Wider Margins -->
-<section class="bg-white py-8 sm:py-12 rounded-[12px] mx-4 sm:mx-auto lg:mx-auto max-w-[1250px] mt-48">
-  <div class="w-full px-2 sm:px-2 md:px-10 lg:px-12 xl:px-16 mx-auto">
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2 justify-items-center">
+<section class="bg-white py-6 sm:py-8 md:py-12 rounded-[12px] mx-4 sm:mx-auto lg:mx-auto max-w-[1250px] mt-48">
+  <div class="w-full px-2 sm:px-4 md:px-10 lg:px-12 xl:px-16 mx-auto">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2 sm:gap-3 md:gap-4 justify-items-center">
       
       <!-- Logo Cards -->
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/zemidi1.svg" alt="Zemidi Logo" class="h-20 w-40 object-contain" />
+      <div class="p-2 sm:p-3 rounded-lg flex items-center justify-center w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px]">
+        <img src="./images/zemidi1.svg" alt="Zemidi Logo" class="h-12 sm:h-16 md:h-20 w-24 sm:w-32 md:w-40 object-contain" />
       </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/minbury2.svg" alt="Minbury Logo" class="h-10 object-contain" />
+      <div class="p-2 sm:p-3 rounded-lg flex items-center justify-center w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px]">
+        <img src="./images/minbury2.svg" alt="Minbury Logo" class="h-6 sm:h-8 md:h-10 object-contain" />
       </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/electro.svg" alt="Electro Logo" class="h-14 object-contain" />
+      <div class="p-2 sm:p-3 rounded-lg flex items-center justify-center w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px]">
+        <img src="./images/electro.svg" alt="Electro Logo" class="h-8 sm:h-10 md:h-14 object-contain" />
       </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/electro.svg" alt="Electro Logo" class="h-14 object-contain" />
+      <div class="p-2 sm:p-3 rounded-lg flex items-center justify-center w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px]">
+        <img src="./images/electro.svg" alt="Electro Logo" class="h-8 sm:h-10 md:h-14 object-contain" />
       </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/zemidi1.svg" alt="Zemidi Logo" class="h-20 w-40 object-contain" />
+      <div class="p-2 sm:p-3 rounded-lg flex items-center justify-center w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px]">
+        <img src="./images/zemidi1.svg" alt="Zemidi Logo" class="h-12 sm:h-16 md:h-20 w-24 sm:w-32 md:w-40 object-contain" />
       </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/minbury2.svg" alt="Minbury Logo" class="h-10 object-contain" />
+      <div class="p-2 sm:p-3 rounded-lg flex items-center justify-center w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px]">
+        <img src="./images/minbury2.svg" alt="Minbury Logo" class="h-6 sm:h-8 md:h-10 object-contain" />
       </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/minbury2.svg" alt="Minbury Logo" class="h-10 object-contain" />
+      <div class="p-2 sm:p-3 rounded-lg flex items-center justify-center w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px]">
+        <img src="./images/minbury2.svg" alt="Minbury Logo" class="h-6 sm:h-8 md:h-10 object-contain" />
       </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/electro.svg" alt="Electro Logo" class="h-14 object-contain" />
+      <div class="p-2 sm:p-3 rounded-lg flex items-center justify-center w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px]">
+        <img src="./images/electro.svg" alt="Electro Logo" class="h-8 sm:h-10 md:h-14 object-contain" />
       </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/zemidi1.svg" alt="Zemidi Logo" class="h-20 w-40 object-contain" />
+      <div class="p-2 sm:p-3 rounded-lg flex items-center justify-center w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px]">
+        <img src="./images/zemidi1.svg" alt="Zemidi Logo" class="h-12 sm:h-16 md:h-20 w-24 sm:w-32 md:w-40 object-contain" />
       </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/electro.svg" alt="Electro Logo" class="h-14 object-contain" />
+      <div class="p-2 sm:p-3 rounded-lg flex items-center justify-center w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px]">
+        <img src="./images/electro.svg" alt="Electro Logo" class="h-8 sm:h-10 md:h-14 object-contain" />
       </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/minbury2.svg" alt="Minbury Logo" class="h-10 object-contain" />
+      <div class="p-2 sm:p-3 rounded-lg flex items-center justify-center w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px]">
+        <img src="./images/minbury2.svg" alt="Minbury Logo" class="h-6 sm:h-8 md:h-10 object-contain" />
       </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/zemidi1.svg" alt="Zemidi Logo" class="h-20 w-40 object-contain" />
+      <div class="p-2 sm:p-3 rounded-lg flex items-center justify-center w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px]">
+        <img src="./images/zemidi1.svg" alt="Zemidi Logo" class="h-12 sm:h-16 md:h-20 w-24 sm:w-32 md:w-40 object-contain" />
       </div>
 
     </div>
@@ -1211,12 +1227,12 @@
 
  <!-- what our clients say  -->
 
-<section id="about" class="mt-48 py-12 text-center w-full">
-  <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 font-['Mona_Sans_Expanded']">
+<section id="about" class="mt-48 py-12 text-center w-full px-4 sm:px-6 lg:px-8">
+  <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6 font-['Mona_Sans_Expanded']">
     What Our <span class="italic font-normal text-[#F40202]">Clients</span> Say
   </h2>
 
-  <p class="text-gray-700 mx-auto mb-12 leading-relaxed font-['Mona_Sans'] text-xs sm:text-sm md:text-base max-w-5xl">
+  <p class="text-gray-700 mx-auto mb-8 sm:mb-10 md:mb-12 leading-relaxed font-['Mona_Sans'] text-xs sm:text-sm md:text-base lg:text-lg max-w-3xl sm:max-w-4xl md:max-w-5xl px-2 sm:px-4">
     Transforming visionary ideas into powerful, user-centric digital
     solutions that drive <br class="hidden sm:block" /> innovation, enhance operational efficiency, and
     accelerate sustainable business <br class="hidden sm:block" /> growth in an ever-evolving digital landscape.
@@ -1226,7 +1242,7 @@
 
 
   <!-- Full Width Wrapper -->
-<section class="w-full mt-8 px-4 sm:px-6 lg:px-6 xl:px-16">
+<section  class="w-full mt-8 px-4 sm:px-6 lg:px-6 xl:px-16">
   <div class="w-full max-w-[1400px] mx-auto py-14 sm:py-20 md:py-24">
     <div class="bg-white border border-[#EFEFEF] rounded-[12px]
                 px-4 sm:px-8 md:px-8  lg:px-20 xl:px-28
@@ -1292,11 +1308,12 @@
 
 <!-- Get in touch -->
 
-<section class="w-full px-4 sm:px-6 lg:px-12 xl:px-16 mt-20">
+<section id="contact" class="w-full px-4 sm:px-6 lg:px-12 xl:px-16 mt-20 overflow-x-hidden">
+  
   <div class="w-full max-w-[1250px] mx-auto">
     <div class="bg-gradient-to-r from-[#EA1717] to-[#EB195C] text-gray-50 
                 px-4 sm:px-6 md:px-10 lg:px-16 py-10 sm:py-14 lg:py-20 
-                rounded-lg overflow-hidden flex flex-col md:flex-row gap-10 md:gap-0">
+                rounded-lg flex flex-col md:flex-row gap-10 md:gap-0">
 
       <!-- Contact Info Section -->
       <div class="p-4 sm:p-6 md:p-8 lg:p-12 w-full md:w-1/2">
@@ -1406,7 +1423,8 @@
 
 
 <!-- Footer section  -->
-<section class="bg-black text-gray-100 pt-32 sm:pt-40 md:pt-56 pb-20 px-4 sm:px-6 md:px-12 lg:px-20 mt-32 md:mt-48">
+<section class="bg-black text-gray-100 pt-32 sm:pt-40 md:pt-56 pb-20 px-4 sm:px-6 md:px-12 lg:px-20 mt-32 md:mt-48 overflow-x-hidden">
+  
   <div class="w-full max-w-[1300px] mx-auto">
     
     <!-- Top Grid: Navigation | Contact | Socials -->
@@ -1473,7 +1491,36 @@
 
 <!-- Skeleton loader is now handled by skeleton_loader.js -->
 
-
+<style>
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+  
+  .video-bg {
+    object-fit: cover;
+    object-position: center;
+    min-height: 100%;
+    min-width: 100%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-size: cover;
+  }
+  
+  @media (max-width: 767px) {
+    .video-bg {
+      height: 100% !important;
+      width: auto !important;
+      max-width: none !important;
+    }
+  }
+</style>
 
     <script src="./slow-connection-detector.js"></script>
     <script src="./script.js"></script>
