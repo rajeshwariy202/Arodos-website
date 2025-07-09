@@ -36,5 +36,5 @@ document.addEventListener('DOMContentLoaded', function() {
       content.style.display = 'block';
     }
     hideSkeleton();
-  }, 3000);
+  }, 1000);
 });
