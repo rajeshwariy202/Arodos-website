@@ -166,15 +166,30 @@
   body.loading {
     overflow: hidden;
   }
+
+
+  /* dots  */
+
+    .dot-active {
+    background-color: #1555B5; /* Active color */
+  }
+
+  .dot-inactive {
+    background-color: #ccc; /* Inactive/gray color */
+  }
+
+  .dot-active, .dot-inactive {
+    transition: background-color 0.3s ease;
+  }
 </style>
 
 
 
     </style>
   </head>
-  <body class="bg-[#F3F3F3]">
+  <body class="bg-[#F3F3F3] loading">
 
-    <!-- Skeleton Loader Template -->
+<!-- Skeleton Loader Template -->
 <template id="skeleton-template">
   <div id="full-page-skeleton-overlay" class="text-white">
     <!-- Header skeleton with black background -->
@@ -598,9 +613,9 @@
   </div>
 </template>
 
-    <div id="real-content" style="display: none;">
+<div id="real-content" style="display: none;">
    <header
-            class="py-8 mt-4 max-w-8xl mx-auto rounded-t-[24px] rounded-b-none bg-black shadow-lg ml-4 mr-4"
+            class="py-4 mt-4 max-w-8xl mx-auto rounded-t-[24px] rounded-b-none bg-black shadow-lg ml-4 mr-4"
         >
             <div
                 class="container mt-5 mx-auto flex items-center justify-between px-6 md:px-8 lg:px-16"
@@ -631,7 +646,7 @@
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="#whyus"
                                 class="text-white/70 hover:text-[#F40202] transition-colors duration-200 text-base"
                                 >Why Us?</a
                             >
@@ -692,7 +707,7 @@
                 </div>
             </div>
 
-            <nav id="mobile-menu" class="md:hidden hidden bg-gray-800 py-4 px-6">
+            <nav id="mobile-menu" class="md:hidden hidden bg-gray-800 py-0 px-6">
                 <ul class="flex flex-col items-center space-y-4">
                     <li>
                         <a
@@ -710,7 +725,7 @@
                     </li>
                     <li>
                         <a
-                            href="#"
+                            href="#whyus"
                             class="block text-white/70 text-lg hover:text-[#F40202] transition-colors duration-200 py-2 px-4"
                             >Why Us?</a
                         >
@@ -734,7 +749,7 @@
         </header>
 
 <main
-  class="relative ml-4 mr-4 flex flex-col justify-center items-center max-w-8xl mx-auto overflow-hidden min-h-[calc(100vh+200px)] lg:min-h-[calc(100vh+100px)] py-10"
+  class="relative ml-4 mr-4 flex flex-col justify-center items-center max-w-8xl mx-auto overflow-hidden min-h-screen sm:min-h-[calc(100vh+100px)] lg:min-h-[calc(100vh+100px)] py-2 sm:py-10"
   style="border-bottom-left-radius: 40px; border-bottom-right-radius: 40px"
 >
   <video
@@ -751,44 +766,44 @@
   <div class="absolute inset-0 bg-black opacity-40 z-0"></div>
 
   <section
-    class="text-white p-6 md:p-10 text-center relative z-10 flex-grow flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-16"
+    class="text-white p-4 sm:p-6 md:p-10 text-center relative z-10 flex-grow flex items-center justify-center px-3 sm:px-6 md:px-10 lg:px-16"
   >
     <div class="max-w-4xl mx-auto">
-      <div class="flex items-center justify-center mt-4 mb-6 space-x-3">
-        <img src="./images/happy-customer1.png" alt="Trust Badge" class="w-30 h-30" />
+      <div class="flex items-center justify-center mt-2 sm:mt-4 mb-4 sm:mb-6 space-x-3">
+        <img src="./images/happy-customer1.png" alt="Trust Badge" class="h-10 w-auto sm:h-12 md:h-14" />
       </div>
+<h1 class="text-center leading-none font-['Mona_Sans']">
+  <span
+    class="block text-[1.75rem] sm:text-5xl md:text-6xl lg:text-[72px] xl:text-[80px] font-extrabold tracking-tight mb-[-6px] sm:mb-[-12px] leading-[2.2rem] sm:leading-[3.2rem]"
+  >
+    Built to
+    <span
+      class="text-[#F40202] italic font-[InstrumentSerif] text-[1.75rem] sm:text-5xl md:text-6xl lg:text-[74px] inline-block -mx-1 leading-[2.2rem] sm:leading-[3.2rem]"
+    >
+      Shape
+    </span>
+    the
+  </span>
+  <span
+    class="block text-[1.75rem] sm:text-5xl md:text-6xl lg:text-[72px] xl:text-[80px] font-extrabold tracking-tight mt-[6px] sm:mt-[4px] leading-[2.2rem] sm:leading-[3.2rem]"
+  >
+    Future
+  </span>
+</h1>
 
-      <h1 class="text-center leading-none font-['Mona_Sans']">
-        <span
-          class="block text-2xl sm:text-6xl md:text-5xl lg:text-[72px] xl:text-[80px] 2xl:text-[88px] font-extrabold tracking-[-0.01em] mb-[-10px] sm:mb-[-14px] md:mb-[-16px] leading-[2.4rem] sm:leading-[3.4rem] md:leading-[4.2rem] lg:leading-[4.8rem] xl:leading-[5rem]"
-        >
-          Built to
-          <span
-            class="text-[#F40202] italic text-2xl sm:text-6xl md:text-5xl lg:text-[74px] xl:text-[82px] 2xl:text-[90px] font-[InstrumentSerif] inline-block -mx-1 leading-[2.4rem] sm:leading-[3.4rem] md:leading-[4.2rem] lg:leading-[4.8rem] xl:leading-[5rem]"
-          >
-            Shape
-          </span>
-          the
-        </span>
-        <span
-          class="block text-2xl sm:text-6xl md:text-5xl lg:text-[72px] xl:text-[80px] 2xl:text-[88px] font-extrabold tracking-[-0.01em] mt-[4px] sm:mt-[6px] md:mt-[8px] lg:mt-[10px] xl:mt-[12px] 2xl:mt-[14px] leading-[2.4rem] sm:leading-[3.4rem] md:leading-[4.2rem] lg:leading-[4.8rem] xl:leading-[5.2rem]"
-        >
-          Future
-        </span>
-      </h1>
 
-      <p
-        class="text-sm sm:text-base md:text-[18px] lg:text-[20px] xl:text-[22px] leading-[1.4rem] sm:leading-[1.5rem] md:leading-[1.6rem] lg:leading-[1.8rem] tracking-[-0.02em] font-normal text-center text-gray-300 max-w-[300px] sm:max-w-[500px] md:max-w-3xl mx-auto mb-8 mt-5 font-['Mona_Sans']"
-      >
-        Welcome to Arodos Technologies. We are a digital innovation partner
-        focused on building high-performance, scalable solutions across ERP,
-        CRM, AI, and mobile app platforms.
-      </p>
+<p
+  class="text-[0.85rem] sm:text-[0.9rem] md:text-[1rem] lg:text-[1.125rem] xl:text-[1.25rem] leading-[1.3rem] sm:leading-[1.4rem] md:leading-[1.6rem] tracking-tight text-center text-gray-300 font-normal font-['Mona_Sans'] max-w-[450px] sm:max-w-[320px] md:max-w-[600px] mx-auto px-2 mt-4 mb-6"
+>
+  Welcome to Arodos Technologies. We are a digital innovation partner focused on building high-performance, scalable solutions across ERP, CRM, AI, and mobile app platforms.
+</p>
+
+
 
       <div class="flex justify-center">
         <button
           id="exploreBtn"
-          class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] text-white font-semibold mt-6 rounded-[12px] py-3 sm:py-4 md:py-5 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-40 flex items-center justify-center gap-3 sm:gap-4 text-sm sm:text-base md:text-lg lg:text-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+          class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] text-white font-semibold mt-4 sm:mt-6 rounded-[12px] py-3 sm:py-4 md:py-5 px-8 sm:px-12 md:px-16 lg:px-32 xl:px-40 flex items-center justify-center gap-2 sm:gap-3 md:gap-4 text-base sm:text-lg md:text-lg lg:text-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
         >
           <span id="btnText">Explore Our Expertise</span>
           <span
@@ -805,65 +820,113 @@
         </button>
       </div>
 
-      <div
-        class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16 lg:gap-20 mt-20 sm:mt-32 md:mt-40 text-white"
-      >
-        <div class="text-center">
-          <p
-            class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium font-['Mona_Sans_Expanded'] text-gray-400"
-          >
-            On-Time Delivery
-          </p>
-          <p
-            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold mt-2 text-gray-400 font-['Mona_Sans_Expanded']"
-          >
-            98%
-          </p>
-        </div>
-        <div class="text-center">
-          <p
-            class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium font-['Mona_Sans_Expanded'] text-gray-400"
-          >
-            Apps Launched
-          </p>
-          <p
-            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold mt-2 text-gray-400 font-['Mona_Sans_Expanded']"
-          >
-            75
-          </p>
-        </div>
-        <div class="text-center">
-          <p
-            class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium font-['Mona_Sans_Expanded'] text-gray-400"
-          >
-            Projects Completed
-          </p>
-          <p
-            class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl lg:text-5xl xl:text-6xl font-extrabold mt-2 text-gray-400 font-['Mona_Sans_Expanded']"
-          >
-            120+
-          </p>
-        </div>
-      </div>
+    <div
+  class="flex flex-row flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-10 lg:gap-16 mt-40 sm:mt-20 md:mt-24 lg:mt-28 text-white"
+>
+  <div class="flex flex-col items-center min-w-[100px] text-center">
+    <p
+      class="text-[0.85rem] sm:text-[0.9rem] md:text-base lg:text-lg xl:text-xl leading-tight font-medium font-['Mona_Sans_Expanded'] text-gray-400"
+    >
+      On-Time Delivery
+    </p>
+    <p
+      class="text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] lg:text-4xl xl:text-5xl font-extrabold text-gray-400 mt-1"
+    >
+      98%
+    </p>
+  </div>
+
+  <div class="flex flex-col items-center min-w-[100px] text-center">
+    <p
+      class="text-[0.85rem] sm:text-[0.9rem] md:text-base lg:text-lg xl:text-xl leading-tight font-medium font-['Mona_Sans_Expanded'] text-gray-400"
+    >
+      Apps Launched
+    </p>
+    <p
+      class="text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] lg:text-4xl xl:text-5xl font-extrabold text-gray-400 mt-1"
+    >
+      75
+    </p>
+  </div>
+
+  <div class="flex flex-col items-center min-w-[100px] text-center">
+    <p
+      class="text-[0.85rem] sm:text-[0.9rem] md:text-base lg:text-lg xl:text-xl leading-tight font-medium font-['Mona_Sans_Expanded'] text-gray-400"
+    >
+      Projects Completed
+    </p>
+    <p
+      class="text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] lg:text-4xl xl:text-5xl font-extrabold text-gray-400 mt-1"
+    >
+      120+
+    </p>
+  </div>
+</div>
+
     </div>
   </section>
 </main>
 
 
+<section class=" py-8 px-4 sm:px-6 lg:px-8 xl:px-16 pt-12 sm:pt-24">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:h-[400px] gap-0 md:gap-0">
+      
+      <!-- Image Section First on Mobile -->
+      <div class="w-full md:w-1/2 order-1 md:order-2 h-[300px] md:h-full">
+        <img src="./images/who_we.svg" alt="Team collaboration" 
+             class="w-full h-full object-cover rounded-none md:rounded-xl md:rounded-l-none">
+      </div>
+
+      <!-- Text Block Below Image on Mobile -->
+      <div class="w-full md:w-1/2 bg-[#EDEDED] p-4 md:p-6 lg:p-8 
+                  rounded-none md:rounded-xl md:rounded-r-none h-full 
+                  flex flex-col justify-between">
+        <h2 class="text-3xl sm:text-4xl lg:text-[48px] leading-tight tracking-tight mb-6 font-['Mona_Sans_Expanded']">
+          <span class="text-[#F40202] font-normal italic">Who</span>
+          <span class="font-black">We Are</span>
+        </h2>
+        <div class="-mt-4 space-y-[8px] text-gray-700 font-['Mona_Sans'] text-[15px] leading-[1.5] mb-0">
+          <p>
+            Arodos Technologies began post-COVID when our founder returned from Bengaluru to Assam, determined to serve his own people with world-class tech solutions.
+          </p>
+          <p>
+            We now deliver ERP, AI, and custom app development to empower businesses, startups, and institutions to grow faster.
+          </p>
+          <p>
+            With a client base spread across India, US and Canada, we specialize in systems that handle scale, security, and smart automation.
+          </p>
+        </div>
+        <a href="#" class="text-[#1555B5] hover:text-[#1F89CA] font-medium transition duration-200 ease-in-out flex items-center">
+          Read More
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
 
 
 <!-- Outer Wrapper with White Background -->
-<section class="w-full py-2 mt-12">
-  <div class="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-12 xl:px-16 rounded-[12px]">
-    <section class="py-12 mt-16 max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-2 justify-center">
+
+    <section class="px-4  sm:pt-24 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4 justify-center">
         
         <!-- Our Vision Card -->
-        <div class="w-full max-w-[600px]">
-          <div class="relative shadow-lg overflow-hidden rounded-[12px] flex flex-col justify-start text-gray-50 min-h-[600px] md:min-h-[800px]">
+        <div class="w-full max-w-[650px]">
+          <div class="relative shadow-lg overflow-hidden rounded-[12px] flex flex-col justify-start text-gray-50 min-h-[400px] sm:min-h-[500px] md:min-h-[800px]">
             <video src="./images/our vision.mp4" autoplay loop muted class="absolute inset-0 w-full h-full object-cover z-0 filter brightness-75"></video>
             <div class="absolute inset-x-0 w-full bg-white/5 backdrop-blur-md font-[mona_sans] flex items-center pt-16 pb-8 px-6 text-gray-100 space-x-4">
-              <span class="absolute left-8 top-24 -translate-y-1/2 size-3 bg-[#F40202] rounded-full"></span>
+              <span class="absolute left-8 top-20 -translate-y-1/2 size-3 bg-[#F40202] rounded-full"></span>
               <div class="flex-grow pl-4">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-['Mona_Sans_Expanded'] mb-4">
                   <span class="font-bold">Our</span> <span class="font-normal italic">Vision</span>
@@ -877,8 +940,8 @@
         </div>
 
         <!-- Our Mission Card -->
-        <div class="w-full max-w-[600px]">
-          <div class="relative shadow-lg overflow-hidden rounded-[12px] flex flex-col justify-end text-gray-50 min-h-[600px] md:min-h-[800px]">
+        <div class="w-full max-w-[650px]">
+          <div class="relative shadow-lg overflow-hidden rounded-[12px] flex flex-col justify-end text-gray-50 min-h-[400px] sm:min-h-[500px] md:min-h-[800px]">
             <video src="./images/Our mission.mp4" autoplay loop muted class="absolute inset-0 w-full h-full object-cover z-0 filter brightness-75"></video>
             <div class="absolute inset-x-0 bottom-0 w-full bg-white/10 backdrop-blur-md font-[mona_sans] flex items-center pt-8 pb-16 px-6 text-gray-100 space-x-4">
               <span class="absolute left-8 top-14 -translate-y-1/2 size-3 bg-[#F40202] rounded-full"></span>
@@ -896,20 +959,12 @@
 
       </div>
     </section>
-  </div>
-</section>
-
-
-
-
-
-
 
 
 
  <!-- Agile Approach  -->
 
-<section class="py-10 sm:py-16 lg:py-24 w-full mt-24 sm:mt-32 lg:mt-20 max-w-[98%] mx-auto">
+<section id="whyus" class=" sm:py-16 lg:py-24 w-full mt-12 sm:mt-32 lg:mt-20 max-w-[98%] mx-auto">
   <!-- Heading -->
   <div class="text-center px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl sm:text-4xl lg:text-[48px] leading-tight tracking-tight mb-6 font-['Mona_Sans_Expanded']">
@@ -924,53 +979,95 @@
   </div>
 
   <!-- Card Grid Container -->
-<section class="px-2 sm:px-2 lg:px-12 xl:px-16 pt-10">
+<section class="px-2 sm:px-2 lg:px-12 xl:px-16 pt-8">
   <div class="w-full max-w-[1400px] mx-auto">
-    <div class="bg-[#F3F3F3] py-10 sm:py-16 px-2 sm:px-2 lg:px-10 rounded-[16px] max-w-[1300px] mx-auto">
+    <div class="bg-[#F3F3F3] py-2 sm:py-16 px-2 sm:px-4 lg:px-10 rounded-[16px] max-w-[1300px] mx-auto">
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center"
         style="perspective: 1200px;"
       >
 
         <!-- Card 1 -->
-        <div class="card relative group h-[400px] sm:h-[480px] md:h-[600px] w-full max-w-[450px]
-                    rounded-[16px] overflow-hidden transition-transform duration-300 transform
-                    sm:hover:rotate-y-1 sm:hover:rotate-x-1 shadow-lg hover:shadow-2xl">
-          <img src="./images/customer first.jpg" alt="Customer First"
-               class="absolute inset-0 w-full h-full object-cover rounded-[16px]" />
-          <div class="absolute bottom-0 inset-x-0 p-5 bg-black/90 text-center">
-            <p class="text-white text-lg sm:text-xl md:text-2xl font-semibold font-['Mona_Sans_Expanded']">
-              1. Customer First
-            </p>
-          </div>
-        </div>
+<div class="card relative group h-[450px] sm:h-[500px] md:h-[600px] w-full max-w-[450px] rounded-[16px] overflow-hidden shadow-lg">
+  <!-- Background Image -->
+  <img src="./images/customer first.jpg" alt="Customer First"
+       class="absolute inset-0 w-full h-full object-cover rounded-[16px]" />
+
+  <!-- Initial Bottom Bar with Title -->
+  <div class="absolute bottom-0 inset-x-0 bg-black/90 text-white text-center z-10 p-4 transition-opacity duration-300 group-hover:opacity-0">
+    <p class="text-lg sm:text-xl md:text-2xl font-semibold font-['Mona_Sans_Expanded']">
+      1. Customer First
+    </p>
+  </div>
+
+  <!-- Hover Overlay from Bottom -->
+  <div class="absolute inset-0 bg-black/90 text-white flex flex-col justify-center items-center text-center px-6 py-8 
+              transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-20">
+    <p class="text-lg sm:text-xl md:text-2xl font-semibold mb-4 font-['Mona_Sans_Expanded']">
+      1. Customer First
+    </p>
+    <p class="text-sm sm:text-base md:text-lg font-['Mona_Sans']">
+      Putting customers at the heart of everything we do to deliver value, trust, and long-term relationships.
+
+  </div>
+</div>
+
+
+
+
 
         <!-- Card 2 -->
-        <div class="card relative group h-[400px] sm:h-[480px] md:h-[600px] w-full max-w-[600px]
-                    rounded-[16px] overflow-hidden transition-transform duration-300 transform
-                    hover:rotate-y-1 hover:rotate-x-1 shadow-lg hover:shadow-2xl
-                    mt-10 sm:mt-0 md:mt-12 lg:mt-16">
-          <img src="./images/professional.jpg" alt="Professional"
-               class="absolute inset-0 w-full h-full object-cover rounded-[16px]" />
-          <div class="absolute bottom-0 inset-x-0 p-5 bg-black/90 text-center">
-            <p class="text-white text-lg sm:text-xl md:text-2xl font-semibold font-['Mona_Sans_Expanded']">
-              2. Professional
-            </p>
-          </div>
+        <div class="card relative group h-[450px] sm:h-[500px] md:h-[600px] w-full max-w-[600px] rounded-[16px] overflow-hidden shadow-lg mt-0 sm:mt-0 md:mt-6 lg:mt-8">
+          <!-- Background Image -->
+  <img src="./images/professional.jpg" alt="Professional"
+       class="absolute inset-0 w-full h-full object-cover rounded-[16px]" />
+
+  <!-- Initial Bottom Bar with Title -->
+  <div class="absolute bottom-0 inset-x-0 bg-black/90 text-white text-center z-10 p-4 transition-opacity duration-300 group-hover:opacity-0">
+    <p class="text-lg sm:text-xl md:text-2xl font-semibold font-['Mona_Sans_Expanded']">
+      2. Professional
+    </p>
+  </div>
+
+  <!-- Hover Overlay from Top -->
+  <div class="absolute inset-0 bg-black/90 text-white flex flex-col justify-center items-center text-center px-6 py-8 
+              transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-20">
+    <p class="text-lg sm:text-xl md:text-2xl font-semibold mb-4 font-['Mona_Sans_Expanded']">
+      2. Professional
+    </p>
+    <p class="text-sm sm:text-base md:text-lg font-['Mona_Sans']">
+      Committed to excellence, we deliver innovative solutions backed by deep knowledge and a customer-focused approach.
+
+    </p>
+  </div>
         </div>
 
+
         <!-- Card 3 -->
-        <div class="card relative group h-[400px] sm:h-[480px] md:h-[600px] w-full max-w-[450px]
-                    rounded-[16px] overflow-hidden transition-transform duration-300 transform
-                    hover:rotate-y-1 hover:rotate-x-1 shadow-lg hover:shadow-2xl">
-          <img src="./images/problem solver.jpg" alt="Problem Solver"
-               class="absolute inset-0 w-full h-full object-cover rounded-[16px]" />
-          <div class="absolute bottom-0 inset-x-0 p-5 bg-black/90 text-center">
-            <p class="text-white text-lg sm:text-xl md:text-2xl font-semibold font-['Mona_Sans_Expanded']">
-              3. Problem Solver
-            </p>
-          </div>
-        </div>
+       <div class="card relative group h-[450px] sm:h-[500px] md:h-[600px] w-full max-w-[450px] rounded-[16px] overflow-hidden shadow-lg">
+  <!-- Background Image -->
+  <img src="./images/problem solver.jpg" alt="Problem Solver"
+       class="absolute inset-0 w-full h-full object-cover rounded-[16px]" />
+
+  <!-- Initial Bottom Bar with Title -->
+  <div class="absolute bottom-0 inset-x-0 bg-black/90 text-white text-center z-10 p-4 transition-opacity duration-300 group-hover:opacity-0">
+    <p class="text-lg sm:text-xl md:text-2xl font-semibold font-['Mona_Sans_Expanded']">
+      3. Problem Solver
+    </p>
+  </div>
+
+  <!-- Hover Overlay from Top -->
+  <div class="absolute inset-0 bg-black/90 text-white flex flex-col justify-center items-center text-center px-6 py-8 
+              transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-20">
+    <p class="text-lg sm:text-xl md:text-2xl font-semibold mb-4 font-['Mona_Sans_Expanded']">
+      3. Problem Solver
+    </p>
+    <p class="text-sm sm:text-base md:text-lg font-['Mona_Sans']">
+      Turning challenges into opportunities with smart, effective, and actionable solutions.
+    </p>
+  </div>
+</div>
+
 
       </div>
     </div>
@@ -981,310 +1078,457 @@
 </section>
 
 
-
-
-
-
-
-
 <!-- Our Services -->
-
-   <section id="services" class="px-4 sm:px-5 md:px-8 lg:px-12 xl:px-16 max-w-[96rem] mx-auto mt-48">
+   <section id="services" class="px-4 sm:px-5 md:px-8 lg:px-12 xl:px-16 max-w-[96rem] mx-auto">
   <!-- Heading -->
   <div class="bg-gray-100 py-10 text-center px-4">
     <h2 class="text-4xl sm:text-4xl md:text-5xl font-semibold mb-4 font-['Mona_Sans_Expanded']">
       <span class="text-black">Our</span> <span class="text-[#F40202] font-normal italic">Services</span>
     </h2>
-    <p class="text-gray-700 leading-relaxed max-w-2xl mx-auto font-['Mona_Sans']">
+    <p class="text-gray-700 leading-relaxed max-w-2xl mx-auto font-['Mona_Sans'] text-sm sm:text-base md:text-lg">
       Transforming visionary ideas into powerful, user-centric digital solutions that drive innovation, enhance operational efficiency, and accelerate sustainable business growth in an ever-evolving digital landscape.
     </p>
   </div>
 
- <div class="pt-20">
+ <div class="pt-8 sm:pt-12 md:pt-16 lg:pt-20">
    <!-- 1st Content -->
- <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
+<div class="grid grid-cols-1 md:grid-cols-5 text-gray-50 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
+
   <!-- Text Block -->
-  <div class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] p-6 sm:p-8 flex flex-col justify-between rounded-lg md:col-span-2 w-full max-w-[600px] mx-auto md:mx-0">
-    <div>
-      <span class="relative text-gray-50 text-3xl font-semibold mb-4 block font-['Mona_Sans_Expanded']">
+<div class="bg-gradient-to-br from-[#1555B5] via-[#1F89CA] to-[#2B9FD9] 
+            p-6 sm:p-8 md:p-12 flex flex-col justify-between 
+            rounded-t-xl rounded-br-none rounded-bl-none
+            md:rounded-tr-none md:rounded-br-none md:rounded-bl-xl
+            md:col-span-2 w-full max-w-[600px] mx-auto md:mx-0 
+            min-h-[360px] sm:min-h-[420px] md:min-h-[700px] 
+            shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] 
+            relative overflow-hidden">
+
+
+    <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+
+    <div class="relative z-10">
+      <span class="relative text-gray-50 text-3xl font-semibold mb-6 block font-['Mona_Sans_Expanded'] drop-shadow-sm">
         01
-        <span class="absolute right-4 top-1/2 transform -translate-y-1/2 w-[2px] h-5 bg-white rotate-[25deg]"></span>
+        <span class="absolute right-4 top-1/2 transform -translate-y-1/2 w-[3px] h-6 bg-white/80 rotate-[25deg] shadow-sm"></span>
       </span>
-      <h3 class="text-2xl sm:text-3xl md:text-4xl font-semibold mb-8 font-['Mona_Sans_Expanded'] leading-snug">
+      <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 font-['Mona_Sans_Expanded'] leading-tight drop-shadow-sm">
         Custom Website & Mobile App
       </h3>
-      <p class="text-sm sm:text-base md:text-lg leading-relaxed font-['Mona_Sans'] mt-8 sm:mt-12">
-        Delivering a high-performance, mobile-friendly and user-centric online store to enhance customer experience, boost sales, and drive business growth for XYZ Retail Solutions.
-      </p>
     </div>
+
+    <p class="text-sm sm:text-base md:text-lg leading-relaxed font-['Mona_Sans'] relative z-10 drop-shadow-sm">
+      Delivering a high-performance, mobile-friendly and user-centric online store to enhance customer experience, boost sales, and drive business growth for XYZ Retail Solutions.
+    </p>
   </div>
 
   <!-- Image Block -->
-  <div class="h-[320px] sm:h-[400px] md:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0">
+  <div class="h-[360px] sm:h-[420px] md:h-[700px] lg:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0 group">
     <img src="./images/Custom Website & Mobile App.jpg" alt="Website on laptop"
-         class="w-full h-full object-cover rounded-lg shadow-md" />
+         class="w-full h-full object-cover 
+                rounded-b-xl sm:rounded-b-xl sm:rounded-t-none
+                lg:rounded-tr-xl lg:rounded-br-xl lg:rounded-tl-none lg:rounded-bl-none
+                hover:shadow-2xl 
+                transition-all duration-300 
+                group-hover:scale-[1.02]" />
   </div>
+
 </div>
+
 
 
 
   <!-- 2nd Content -->
-<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
+<div class="grid grid-cols-1 md:grid-cols-5 text-gray-50 mt-8 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
   <!-- Image Block -->
-  <div class="h-[320px] sm:h-[400px] md:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0">
+  <div class="min-h-[400px] sm:min-h-[480px] md:min-h-[700px] lg:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0 group">
     <img
       src="./images/Custom ERP, CRM, AI Solution.jpg"
       alt="ERP Solution"
-      class="w-full h-full object-cover rounded-lg shadow-md"
+      class="w-full h-full object-cover
+             rounded-t-xl sm:rounded-bl-xl sm:rounded-tr-xl
+             md:rounded-tr-none md:rounded-bl-xl md:rounded-tl-xl
+             transition-all duration-300 group-hover:scale-[1.02]"
     />
   </div>
 
   <!-- Text Block -->
-  <div class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] p-6 sm:p-8 flex flex-col justify-between rounded-lg md:col-span-2 w-full max-w-[620px] mx-auto md:mx-0">
-    <div>
-      <span class="relative text-gray-50 text-3xl font-semibold mb-4 block font-['Mona_Sans_Expanded']">
+  <div class="bg-gradient-to-br from-[#1555B5] via-[#1F89CA] to-[#2B9FD9] p-8 sm:p-10 md:p-12 flex flex-col justify-between
+              rounded-b-xl sm:rounded-br-xl sm:rounded-bl-xl
+              md:rounded-bl-none md:rounded-tr-xl md:rounded-br-xl
+              md:col-span-2 w-full max-w-[620px] mx-auto md:mx-0
+              min-h-[500px] sm:min-h-[600px] md:min-h-[700px]
+              shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] relative overflow-hidden">
+    
+    <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+    
+    <div class="relative z-10">
+      <span class="relative text-gray-50 text-3xl font-semibold mb-6 block font-['Mona_Sans_Expanded'] drop-shadow-sm">
         02
-        <span class="absolute right-4 top-1/2 transform -translate-y-1/2 w-[2px] h-5 bg-white rotate-[25deg]"></span>
+        <span class="absolute right-4 top-1/2 transform -translate-y-1/2 w-[3px] h-6 bg-white/80 rotate-[25deg] shadow-sm"></span>
       </span>
-      <h3 class="text-2xl sm:text-3xl md:text-4xl font-semibold mb-8 font-['Mona_Sans_Expanded'] leading-snug">
+      <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 font-['Mona_Sans_Expanded'] leading-tight drop-shadow-sm">
         Custom ERP, CRM, AI Solution
       </h3>
-      <p class="text-sm sm:text-base md:text-lg leading-[1.6rem] font-['Mona_Sans'] mt-8 sm:mt-12">
-        We build intelligent ERP, CRM, and AI-powered systems that streamline operations, automate workflows, and provide actionable insights for data-driven decision-making.
-      </p>
     </div>
+    
+    <p class="text-sm sm:text-base md:text-lg leading-relaxed font-['Mona_Sans'] relative z-10 drop-shadow-sm">
+      We build intelligent ERP, CRM, and AI-powered systems that streamline operations, automate workflows, and provide actionable insights for data-driven decision-making.
+    </p>
   </div>
 </div>
+
 
 
   <!-- 3rd Content -->
-<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
+<div class="grid grid-cols-1 md:grid-cols-5 text-gray-50 mt-8 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
   <!-- Text Block -->
-  <div class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] p-6 sm:p-8 flex flex-col justify-between rounded-lg md:col-span-2 w-full max-w-[620px] mx-auto md:mx-0">
-    <div>
-      <span class="relative text-gray-50 text-3xl font-semibold mb-4 block font-['Mona_Sans_Expanded']">
+  <div class="bg-gradient-to-br from-[#1555B5] via-[#1F89CA] to-[#2B9FD9]
+              p-8 sm:p-10 md:p-12 flex flex-col justify-between
+              rounded-t-xl sm:rounded-tr-xl sm:rounded-bl-xl
+              md:rounded-tl-xl md:rounded-bl-xl md:rounded-tr-none
+              md:col-span-2 w-full max-w-[620px] mx-auto md:mx-0
+              min-h-[500px] sm:min-h-[600px] md:min-h-[700px]
+              shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]
+              relative overflow-hidden">
+
+    <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+    
+    <div class="relative z-10">
+      <span class="relative text-gray-50 text-3xl font-semibold mb-6 block font-['Mona_Sans_Expanded'] drop-shadow-sm">
         03
-        <span class="absolute right-4 top-1/2 transform -translate-y-1/2 w-[2px] h-5 bg-white rotate-[25deg]"></span>
+        <span class="absolute right-4 top-1/2 transform -translate-y-1/2 w-[3px] h-6 bg-white/80 rotate-[25deg] shadow-sm"></span>
       </span>
-      <h3 class="text-2xl sm:text-3xl md:text-4xl font-semibold mb-8 font-['Mona_Sans_Expanded'] leading-snug">
+      <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 font-['Mona_Sans_Expanded'] leading-tight drop-shadow-sm">
         Technology Assessment
       </h3>
-      <p class="text-sm sm:text-base md:text-lg leading-[1.6rem] font-['Mona_Sans'] mt-8 sm:mt-12">
-        Evaluating current technological capabilities to identify strengths and weaknesses, recommending improvements, and implementing solutions.
-      </p>
     </div>
+
+    <p class="text-sm sm:text-base md:text-lg leading-relaxed font-['Mona_Sans'] relative z-10 drop-shadow-sm">
+      Evaluating current technological capabilities to identify strengths and weaknesses, recommending improvements, and implementing solutions.
+    </p>
   </div>
 
   <!-- Image Block -->
-  <div class="h-[320px] sm:h-[400px] md:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0">
+  <div class="min-h-[400px] sm:min-h-[480px] md:min-h-[700px] lg:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0 group">
     <img
       src="./images/Custom Website & Mobile App.jpg"
       alt="Technology Assessment"
-      class="w-full h-full object-cover rounded-lg shadow-md"
+      class="w-full h-full object-cover
+             rounded-b-xl sm:rounded-bl-none sm:rounded-br-xl
+             md:rounded-bl-none md:rounded-br-xl md:rounded-tr-xl
+             shadow-xl hover:shadow-2xl transition-all duration-300 group-hover:scale-[1.02]"
     />
   </div>
 </div>
 
+
   <!-- 4th Content -->
-<div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-gray-50 mt-16 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
+<div class="grid grid-cols-1 md:grid-cols-5 text-gray-50 mt-8 max-w-screen-2xl mx-auto px-2 sm:px-2 lg:px-12 xl:px-16">
   <!-- Image Block -->
-  <div class="h-[320px] sm:h-[400px] md:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0">
-    <img
-      src="./images/Custom ERP, CRM, AI Solution.jpg"
-      alt="Strategic Planning"
-      class="w-full h-full object-cover rounded-lg shadow-md"
-    />
+  <div class="min-h-[400px] sm:min-h-[480px] md:min-h-[700px] lg:h-auto md:col-span-3 w-full max-w-[840px] mx-auto md:mx-0 group">
+   <img 
+  src="./images/Custom ERP, CRM, AI Solution.jpg"
+  alt="Strategic Planning"
+  class="w-full h-full object-cover
+         rounded-t-xl         /* top corners for small screens */
+         lg:rounded-tl-xl     /* top-left corner for large screens */
+         lg:rounded-bl-xl     /* bottom-left corner for large screens */
+         lg:rounded-tr-none   /* remove top-right on large screens if needed */
+         lg:rounded-br-none   /* remove bottom-right on large screens */
+         shadow-xl hover:shadow-2xl transition-all duration-300 group-hover:scale-[1.02]"
+/>
+
   </div>
 
   <!-- Text Block -->
-  <div class="bg-gradient-to-b from-[#1555B5] to-[#1F89CA] p-6 sm:p-8 flex flex-col justify-between rounded-lg md:col-span-2 w-full max-w-[620px] mx-auto md:mx-0">
-    <div>
-      <span class="relative text-gray-50 text-3xl font-semibold mb-4 block font-['Mona_Sans_Expanded']">
+  <div class="bg-gradient-to-br from-[#1555B5] via-[#1F89CA] to-[#2B9FD9]
+              p-8 sm:p-10 md:p-12 flex flex-col justify-between
+              rounded-b-xl sm:rounded-bl-xl sm:rounded-tr-xl
+              md:rounded-tr-xl md:rounded-br-xl md:rounded-bl-none
+              md:col-span-2 w-full max-w-[620px] mx-auto md:mx-0
+              min-h-[500px] sm:min-h-[600px] md:min-h-[700px]
+              shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]
+              relative overflow-hidden">
+    
+    <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+    
+    <div class="relative z-10">
+      <span class="relative text-gray-50 text-3xl font-semibold mb-6 block font-['Mona_Sans_Expanded'] drop-shadow-sm">
         04
-        <span class="absolute right-4 top-1/2 transform -translate-y-1/2 w-[2px] h-5 bg-white rotate-[25deg]"></span>
+        <span class="absolute right-4 top-1/2 transform -translate-y-1/2 w-[3px] h-6 bg-white/80 rotate-[25deg] shadow-sm"></span>
       </span>
-      <h3 class="text-2xl sm:text-3xl md:text-4xl font-semibold mb-8 font-['Mona_Sans_Expanded'] leading-snug">
+      <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 font-['Mona_Sans_Expanded'] leading-tight drop-shadow-sm">
         Strategic Planning
       </h3>
-      <p class="text-sm sm:text-base md:text-lg leading-[1.6rem] font-['Mona_Sans'] mt-8 sm:mt-12">
-        Strategic planning in the context of consulting service aims to outline a roadmap for technology adoption or improvement, aligning IT goals with business objectives to drive growth and innovation.
-      </p>
     </div>
+
+    <p class="text-sm sm:text-base md:text-lg leading-relaxed font-['Mona_Sans'] relative z-10 drop-shadow-sm">
+      Strategic planning in the context of consulting service aims to outline a roadmap for technology adoption or improvement, aligning IT goals with business objectives to drive growth and innovation.
+    </p>
   </div>
 </div>
- </div>
+
+
+</div>
+
+
+
 
 </section>
-
-
 
 <!-- our Clients  -->
 
 
 <!-- Title Section -->
-<section class="sm:py-8 md:py-10 lg:py-12 mx-auto px-4 sm:px-6 md:px-8 text-center mt-24 sm:mt-32 md:mt-48 mb-0 pb-0">
-  <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold  sm:mb-2 font-['Mona_Sans_Expanded']">
+<section class="sm:py-8 md:py-10 lg:py-12 mx-auto px-4 sm:px-6 md:px-8 text-center mt-14 sm:mt-32 md:mt-48 ">
+  <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold sm:mb-2 font-['Mona_Sans_Expanded']">
     <span class="text-gray-900">Our</span>
     <span class="text-[#F40202] font-normal italic">Clients</span>
   </h2>
-</section>
-
-<!-- Stats Section -->
-<section class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 pt-0 mt-2">
-  <div class="flex justify-around items-center flex-wrap gap-6 text-center text-gray-700">
-    <div class="w-1/2 sm:w-1/3 md:w-auto">
-      <p class="text-base sm:text-lg md:text-xl text-gray-500 font-['Mona_Sans_Expanded']">Brands partnered</p>
-      <p class="text-2xl sm:text-3xl font-semibold text-gray-700 font-['Mona_Sans_Expanded']">35+</p>
-    </div>
-    <div class="w-1/2 sm:w-1/3 md:w-auto">
-      <p class="text-base sm:text-lg md:text-xl text-gray-500 font-['Mona_Sans_Expanded']">Client satisfaction</p>
-      <p class="text-2xl sm:text-3xl font-semibold text-gray-700 font-['Mona_Sans_Expanded']">98%</p>
-    </div>
-    <div class="w-full sm:w-1/3 md:w-auto">
-      <p class="text-base sm:text-lg md:text-xl text-gray-500 font-['Mona_Sans_Expanded']">Industries served</p>
-      <p class="text-2xl sm:text-3xl font-semibold text-gray-700 font-['Mona_Sans_Expanded']">12+</p>
-    </div>
-  </div>
+  <p class="text-base sm:text-lg md:text-xl lg:text-xl text-gray-700 mt-4 max-w-4xl mx-auto">
+    We build trust through strong partnerships, blending expertise with innovation to create solutions that drive measurable success. Our approach ensures flexibility, quality, and impactful results every time.
+  </p>
 </section>
 
 
-<!-- Logo Section -->
-<!-- Logo Section with Wider Margins -->
-<section class="bg-white py-8 sm:py-12 rounded-[12px] mx-4 sm:mx-auto lg:mx-auto max-w-[1250px] mt-48">
-  <div class="w-full px-2 sm:px-2 md:px-10 lg:px-12 xl:px-16 mx-auto">
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2 justify-items-center">
+   <section id="services" class="px-4 sm:px-5 md:px-8 lg:px-12 xl:px-16 max-w-[96rem] mx-auto pt-24">
+
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-8 -mt-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-20 xl:px-18">
+
+  <!-- Stats Block -->
+  <div class="bg-gradient-to-br from-[#1555B5] via-[#1F89CA] to-[#2B9FD9] p-0 lg:p-10 flex flex-col justify-center rounded-2xl lg:col-span-2 w-full max-w-[500px] lg:max-w-none min-h-[550px] lg:min-h-[600px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.03] relative overflow-hidden group mx-auto lg:mx-0">
+    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    <div class="absolute -top-20 -right-20 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-16 -left-16 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+    <div class="relative z-10 space-y-8 lg:space-y-10">
+      <div class="text-center lg:text-left">
+       
+        <p class="text-white/90 text-lg font-medium mb-2 font-['Mona_Sans']">Brands partnered</p>
+        <p class="text-white text-4xl lg:text-5xl font-bold font-['Mona_Sans_Expanded'] drop-shadow-lg">35+</p>
+      </div>
+      <div class="text-center lg:text-left">
       
-      <!-- Logo Cards -->
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/zemidi1.svg" alt="Zemidi Logo" class="h-20 w-40 object-contain" />
+        <p class="text-white/90 text-lg font-medium mb-2 font-['Mona_Sans']">Client satisfaction</p>
+        <p class="text-white text-4xl lg:text-5xl font-bold font-['Mona_Sans_Expanded'] drop-shadow-lg">98%</p>
       </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/minbury2.svg" alt="Minbury Logo" class="h-10 object-contain" />
+      <div class="text-center lg:text-left">
+      
+        <p class="text-white/90 text-lg font-medium mb-2 font-['Mona_Sans']">Industries served</p>
+        <p class="text-white text-4xl lg:text-5xl font-bold font-['Mona_Sans_Expanded'] drop-shadow-lg">12+</p>
       </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/electro.svg" alt="Electro Logo" class="h-14 object-contain" />
-      </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/electro.svg" alt="Electro Logo" class="h-14 object-contain" />
-      </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/zemidi1.svg" alt="Zemidi Logo" class="h-20 w-40 object-contain" />
-      </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/minbury2.svg" alt="Minbury Logo" class="h-10 object-contain" />
-      </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/minbury2.svg" alt="Minbury Logo" class="h-10 object-contain" />
-      </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/electro.svg" alt="Electro Logo" class="h-14 object-contain" />
-      </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/zemidi1.svg" alt="Zemidi Logo" class="h-20 w-40 object-contain" />
-      </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/electro.svg" alt="Electro Logo" class="h-14 object-contain" />
-      </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/minbury2.svg" alt="Minbury Logo" class="h-10 object-contain" />
-      </div>
-      <div class="p-3 rounded-lg flex items-center justify-center w-full max-w-[180px]">
-        <img src="./images/zemidi1.svg" alt="Zemidi Logo" class="h-20 w-40 object-contain" />
-      </div>
-
     </div>
   </div>
-</section>
 
+  <!-- Logo Grid Block -->
+  <div class="bg-gradient-to-br from-gray-50 to-white p-14 lg:p-16 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] lg:col-span-3 w-full min-h-[550px] lg:min-h-[600px] flex items-center relative overflow-hidden group">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100/20 rounded-full blur-3xl"></div>
+    <div class="relative z-10 w-full">
+      
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-10 items-center justify-items-center">
+        <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/zemidi1.svg" alt="Zemidi Logo" class="max-w-full h-auto  group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
+        <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/minbury2.svg" alt="Minbury Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
+        <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/electro.svg" alt="Electro Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
+        <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/saraighat.png" alt="Saraighat Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
+        <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/zemidi1.svg" alt="Zemidi Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
+        <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/minbury2.svg" alt="Minbury Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
+        <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/electro.svg" alt="Electro Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
+        <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/electro.svg" alt="Electro Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
 
+           <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/zemidi1.svg" alt="Zemidi Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
+        <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/minbury2.svg" alt="Minbury Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
+        <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/electro.svg" alt="Electro Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
+        <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/electro.svg" alt="Electro Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
 
-
-
-
-
-
-
-
-
-    <div class="flex justify-center mt-8">
+           <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/zemidi1.svg" alt="Zemidi Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
+        <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/minbury2.svg" alt="Minbury Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
+        <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/electro.svg" alt="Electro Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
+        <div class="group/logo hover:scale-110 transition-transform duration-300">
+          <img src="./logos/electro.svg" alt="Electro Logo" class="max-w-full h-auto group-hover/logo:opacity-100 transition-opacity duration-300" />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+   </section>
+
+
 
  <!-- what our clients say  -->
 
-<section id="about" class="mt-48 py-12 text-center w-full">
-  <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 font-['Mona_Sans_Expanded']">
-    What Our <span class="italic font-normal text-[#F40202]">Clients</span> Say
-  </h2>
+<section id="about" class="py-4 sm:py-16 lg:py-24 w-full mt-14 max-w-[98%] mx-auto">
+  <!-- Heading -->
+  <div class="text-center px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl sm:text-4xl lg:text-[48px] leading-tight tracking-tight mb-6 font-['Mona_Sans_Expanded']">
+      What Our <span class="italic font-normal text-[#F40202]">Clients</span> Say
+    </h2>
 
-  <p class="text-gray-700 mx-auto mb-12 leading-relaxed font-['Mona_Sans'] text-xs sm:text-sm md:text-base max-w-5xl">
-    Transforming visionary ideas into powerful, user-centric digital
-    solutions that drive <br class="hidden sm:block" /> innovation, enhance operational efficiency, and
-    accelerate sustainable business <br class="hidden sm:block" /> growth in an ever-evolving digital landscape.
-  </p>
-
-  </section>
-
-
-  <!-- Full Width Wrapper -->
-<section class="w-full mt-8 px-4 sm:px-6 lg:px-6 xl:px-16">
-  <div class="w-full max-w-[1400px] mx-auto py-14 sm:py-20 md:py-24">
-    <div class="bg-white border border-[#EFEFEF] rounded-[12px]
-                px-4 sm:px-8 md:px-8  lg:px-20 xl:px-28
-                py-16 sm:py-24 md:py-32 lg:py-40
-                grid grid-cols-1 md:grid-cols-[1fr_auto] md:gap-x-12 items-center
-                mx-auto max-w-[1250px]">
-      
-      <!-- Testimonial Content -->
-      <div class="relative text-center md:text-left">
-        <img src="./images/que22.svg" alt="Quotation marks"
-             class="absolute -top-6 left-1 w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16" />
-
-        <div class="flex text-left mb-5 mt-16">
-          <span class="text-yellow-500 text-xl sm:text-2xl font-['Mona_Sans']">★★★★★</span>
-        </div>
-
-        <p class="text-sm sm:text-base md:text-lg text-left text-gray-800 font-['Mona_Sans'] leading-relaxed mb-10">
-          "Arodos delivered our MVP on time with exceptional quality. <br class='hidden sm:inline' />
-          Their agile team truly understood our startup <br class='hidden sm:inline' />
-          vision and executed flawlessly"
-        </p>
-
-        <div class="flex items-end justify-between w-full max-w-lg">
-          <p class="text-base sm:text-sm font-medium text-gray-600 text-left font-['Mona_Sans']">
-            <span class="text-lg sm:text-base">Deepankar Bhattacharjya</span><br />
-            <span class="font-light text-sm">Co-Founder & COO, ZEMIDI</span>
-          </p>
-          <img src="./images/que33.svg" alt="Quotation marks"
-               class="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 opacity-30 ml-4 flex-shrink-0 -mt-6 sm:-mt-8 self-end" />
-        </div>
-      </div>
-
-      <!-- Image Block -->
-      <div class="relative w-36 h-36 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-64 lg:h-64
-                  mx-auto md:mx-0 rounded-full overflow-hidden md:-mt-14 lg:-mt-10 md:ml-8">
-        <img src="./images/profile.jpeg" alt="3D effect"
-             class="w-full h-full object-cover object-top rounded-full hover:brightness-110" />
-      </div>
-    </div>
-
-    <!-- Navigation -->
-    <div class="flex items-center justify-center space-x-4 mt-10">
-      <img src="./images/left_icon.svg" alt="Left Arrow" class="w-3 h-3 sm:w-4 sm:h-4 cursor-pointer" />
-      <div class="flex space-x-2">
-        <div class="w-2 h-2 rounded-full bg-gray-300"></div>
-        <div class="w-2 h-2 rounded-full bg-blue-500"></div>
-        <div class="w-2 h-2 rounded-full bg-gray-300"></div>
-        <div class="w-2 h-2 rounded-full bg-gray-300"></div>
-        <div class="w-2 h-2 rounded-full bg-gray-300"></div>
-      </div>
-      <img src="./images/right_icon.svg" alt="Right Arrow" class="w-3 h-3 sm:w-4 sm:h-4 cursor-pointer" />
-    </div>
+    <p class="text-gray-700 text-sm sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed mb-12 font-['Mona_Sans'] font-light">
+      Transforming visionary ideas into powerful, user-centric digital solutions that drive innovation, enhance operational efficiency, and accelerate sustainable business growth in an ever-evolving digital landscape.
+    </p>
   </div>
 </section>
 
 
+  <!-- Full Width Wrapper -->
+<section class="w-full -mt-8 px-4 sm:px-6 lg:px-8 xl:px-16">
+  <div class="w-full max-w-[1400px] mx-auto py-14 sm:py-20 md:py-24 relative">
+
+    <!-- Slider Wrapper -->
+   <!-- OUTER SLIDER CONTAINER -->
+  <div id="testimonialSlider" class="relative overflow-hidden w-full px-4 sm:px-6 md:px-10">
+    <div id="testimonialTrack" class="flex transition-transform duration-700 ease-in-out w-full space-x-4">
+      
+      <!-- CARD 1 -->
+   <div class="min-w-full flex-shrink-0 px-4 sm:px-6 md:px-10">
+         <div class="w-full max-w-[1200px] mx-auto relative bg-white border border-[#EFEFEF] rounded-[12px] 
+              p-6 sm:p-10 lg:p-14 xl:p-16 grid grid-cols-1 md:grid-cols-[1fr_auto] 
+              items-center md:items-start gap-y-8 md:gap-x-12">
+
+         <img src="./images/que22.svg" alt="Quote Icon"
+  class="absolute top-4 right-50 sm:top-6 sm:right-6 lg:top-[1rem] lg:left-[calc(50%-600px+4rem)] lg:right-auto p-2 w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16 h-auto opacity-80" />
 
 
+
+          <!-- Text Content -->
+          <div class="text-center md:text-left w-full">
+            <div class="flex justify-center md:justify-start mb-3 sm:mb-5">
+              <span class="text-yellow-500 text-lg sm:text-xl md:text-2xl font-['Mona_Sans']">★★★★★</span>
+            </div>
+            <p class="text-sm sm:text-base md:text-lg text-gray-800 font-['Mona_Sans'] mb-5 leading-relaxed max-w-xl mx-auto md:mx-0">
+               "Arodos delivered our MVP <br> on time with exceptional quality. <br>
+    Their agile team truly understood our <br> startup vision and executed flawlessly."
+            </p>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+              <div>
+                <p class="text-base sm:text-lg font-semibold text-gray-800">Deepankar Bhattacharjya</p>
+                <p class="font-light text-xs sm:text-sm text-gray-500">Co-Founder & COO, ZEMIDI</p>
+              </div>
+          <img src="./images/que33.svg" alt="Quote End"
+     class="absolute bottom-6 right-4 sm:bottom-40 sm:right-6 
+            lg:bottom-16 lg:left-[calc(50%-600px+20rem)] lg:right-auto 
+            w-8 sm:w-10 md:w-14 lg:w-16 opacity-30" />
+            </div>
+          </div>
+
+          <!-- Profile Image -->
+          <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden shadow-md mx-auto md:mx-0">
+            <img src="./images/profile2.jpeg" alt="Profile"
+                 class="w-full h-full object-cover object-top hover:brightness-110 transition duration-300" />
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+        <div class="min-w-full flex-shrink-0 px-4 sm:px-6 md:px-10">
+        <div class="w-full max-w-[1200px] mx-auto relative bg-white border border-[#EFEFEF] rounded-[12px] 
+              p-6 sm:p-10 lg:p-14 xl:p-16 grid grid-cols-1 md:grid-cols-[1fr_auto] 
+              items-center md:items-start gap-y-8 md:gap-x-12">
+
+
+        <img src="./images/que22.svg" alt="Quote Icon"
+     class="absolute top-4 right-50 sm:top-6 sm:right-6 
+            lg:top-4 lg:left-[calc(50%-600px+4rem)] lg:right-auto 
+            p-2 w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16 h-auto opacity-80" />
+
+
+          <!-- Text Content -->
+          <div class="text-center md:text-left w-full">
+            <div class="flex justify-center md:justify-start mb-3 sm:mb-5">
+              <span class="text-yellow-500 text-lg sm:text-xl md:text-2xl font-['Mona_Sans']">★★★★★</span>
+            </div>
+            <p class="text-sm sm:text-base md:text-lg text-gray-800 font-['Mona_Sans'] mb-5 leading-relaxed max-w-xl mx-auto md:mx-0">
+              "The Arodos team delivered our full-stack <br> dashboard with scalability in mind. <br>
+              Their agile process  <br> made collaboration seamless!"
+            </p>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+              <div>
+                <p class="text-base sm:text-lg font-semibold text-gray-800">David Pierce</p>
+                <p class="font-light text-xs sm:text-sm text-gray-500">Director NA Sales | POWWR</p>
+              </div>
+<img src="./images/que33.svg" alt="Quote End"
+     class="absolute bottom-6 right-4 sm:bottom-8 sm:right-6 
+            lg:bottom-16 lg:left-[calc(50%-600px+20rem)] lg:right-auto 
+            w-8 sm:w-10 md:w-14 lg:w-16 opacity-30" />
+
+
+
+
+
+            </div>
+          </div>
+
+          <!-- Profile Image -->
+          <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden shadow-md mx-auto md:mx-0">
+            <img src="./images/profile4.jpeg" alt="Profile"
+                 class="w-full h-full object-cover object-top hover:brightness-110 transition duration-300" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+    <!-- Dot Indicators -->
+   <div class="flex items-center justify-center space-x-2 mt-4">
+    <div class="w-3 h-3 rounded-full bg-[#1555B5]" id="dot0"></div>
+    <div class="w-3 h-3 rounded-full bg-gray-300" id="dot1"></div>
+  </div>
+
+  </div>
+</section>
+
+<!-- Slider JS -->
+<script>
+  const track = document.getElementById("testimonialTrack");
+  const dots = [document.getElementById("dot0"), document.getElementById("dot1")];
+  let index = 0;
+
+  const slide = () => {
+    index = (index + 1) % dots.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("bg-[#1555B5]", i === index);  // active
+      dot.classList.toggle("bg-gray-300", i !== index);   // inactive
+    });
+  };
+
+  setInterval(slide, 5000); // Slide every 5 seconds
+</script>
 
 
 
@@ -1292,7 +1536,7 @@
 
 <!-- Get in touch -->
 
-<section class="w-full px-4 sm:px-6 lg:px-12 xl:px-16 mt-20">
+<section class="w-full px-4 sm:px-6 lg:px-12 xl:px-16 mt-32">
   <div class="w-full max-w-[1250px] mx-auto">
     <div class="bg-gradient-to-r from-[#EA1717] to-[#EB195C] text-gray-50 
                 px-4 sm:px-6 md:px-10 lg:px-16 py-10 sm:py-14 lg:py-20 
@@ -1405,20 +1649,29 @@
 
 
 
+
+
+
+
+
+
+
 <!-- Footer section  -->
-<section class="bg-black text-gray-100 pt-32 sm:pt-40 md:pt-56 pb-20 px-4 sm:px-6 md:px-12 lg:px-20 mt-32 md:mt-48">
-  <div class="w-full max-w-[1300px] mx-auto">
+
+<section class="w-full bg-black text-gray-100 pt-16 sm:pt-40 md:pt-56 pb-20 mt-32">
+  <div class="max-w-[1300px] mx-auto px-0 sm:px-6 md:px-8">
+
     
     <!-- Top Grid: Navigation | Contact | Socials -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 lg:gap-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 lg:gap-10">
       
       <!-- Navigation -->
       <div>
         <h2 class="text-xl font-bold mb-4 font-['Mona_Sans_Expanded']">Navigation</h2>
         <ul>
           <li class="mb-3"><a href="#" class="text-gray-400 hover:text-white transition font-['Mona_Sans']">Home</a></li>
-          <li class="mb-3"><a href="#" class="text-gray-400 hover:text-white transition font-['Mona_Sans']">Services</a></li>
-          <li class="mb-3"><a href="#" class="text-gray-400 hover:text-white transition font-['Mona_Sans']">Why Us?</a></li>
+          <li class="mb-3"><a href="#services" class="text-gray-400 hover:text-white transition font-['Mona_Sans']">Services</a></li>
+          <li class="mb-3"><a href="#whyus" class="text-gray-400 hover:text-white transition font-['Mona_Sans']">Why Us?</a></li>
           <li class="mb-3"><a href="#" class="text-gray-400 hover:text-white transition font-['Mona_Sans']">About Us</a></li>
         </ul>
       </div>
@@ -1434,7 +1687,7 @@
       </div>
 
       <!-- Social Media -->
-      <div class="flex flex-col sm:items-start md:items-end">
+      <div class="flex flex-col sm:items-start md:items-end mb-10">
         <h2 class="text-xl font-bold mb-4 font-['Mona_Sans_Expanded']">Socials</h2>
         <div class="flex space-x-4">
           <img src="./images/linkdln.png" alt="LinkedIn" class="w-6 h-6 hover:opacity-80 cursor-pointer transition" />
@@ -1463,6 +1716,34 @@
 
   </div>
 </section>
+
+
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="flex justify-center mt-8">
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
